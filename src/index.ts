@@ -1,6 +1,9 @@
 import minimist from 'minimist'
+import * as fs from 'fs'
+import * as util from 'util'
 
 import { collectDependencies } from './collect'
+import { toDotFile } from './dot'
 
 import * as packageJson from '../package.json'
 
@@ -9,6 +12,8 @@ let suppressError = false
 function showToolVersion() {
   console.log(`Version: ${packageJson.version}`)
 }
+
+const writeFileAsync = util.promisify(fs.writeFile)
 
 async function executeCommandLine() {
   const argv = minimist(process.argv.slice(2), { '--': true })
@@ -22,7 +27,15 @@ async function executeCommandLine() {
   suppressError = argv.suppressError
 
   const dependencies = await collectDependencies('.')
-  console.info(dependencies)
+  if (argv.debug) {
+    console.info(dependencies)
+  }
+  const dot = toDotFile(dependencies)
+  if (argv.dot && typeof argv.dot === 'string') {
+    await writeFileAsync(argv.dot, dot)
+  } else if (argv.debug) {
+    console.info(dot)
+  }
 }
 
 executeCommandLine().then(() => {

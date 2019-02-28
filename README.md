@@ -16,4 +16,13 @@ A CLI tool to generate a dependency graph of packages in a monorepo by graphviz.
 
 ## usage
 
-run `package-dependency-graph`
+1. install `graphviz`
+2. run `package-dependency-graph --dot foo.dot`
+3. run `dot -Tpng foo.dot > foo.png`
+
+## arguments
+
+name | type | description
+--- | --- | ---
+`--dot` | string? | save the dot file
+`--debug` | boolean? | show debug info
