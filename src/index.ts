@@ -26,7 +26,7 @@ async function executeCommandLine() {
 
   suppressError = argv.suppressError
 
-  const dependencies = await collectDependencies('.')
+  const dependencies = await collectDependencies(argv.root || '.')
   if (argv.debug) {
     console.info(dependencies)
   }

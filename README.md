@@ -24,5 +24,6 @@ A CLI tool to generate a dependency graph of packages in a monorepo by graphviz.
 
 name | type | description
 --- | --- | ---
+`--root` | string? | tell the CLI the root directory of project
 `--dot` | string? | save the dot file
 `--debug` | boolean? | show debug info
