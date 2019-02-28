@@ -1,6 +1,6 @@
 {
   "name": "package-dependency-graph",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI tool to generate a dependency graph of packages in a monorepo by graphviz.",
   "main": "index.js",
   "dependencies": {
