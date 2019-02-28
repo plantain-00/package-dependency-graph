@@ -1,4 +1,7 @@
 import minimist from 'minimist'
+
+import { collectDependencies } from './collect'
+
 import * as packageJson from '../package.json'
 
 let suppressError = false
@@ -18,7 +21,8 @@ async function executeCommandLine() {
 
   suppressError = argv.suppressError
 
-  // todo
+  const dependencies = await collectDependencies('.')
+  console.info(dependencies)
 }
 
 executeCommandLine().then(() => {
