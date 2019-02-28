@@ -26,7 +26,7 @@ async function executeCommandLine() {
 
   suppressError = argv.suppressError
 
-  const dependencies = await collectDependencies(argv.root || '.')
+  const dependencies = await collectDependencies(argv.root || '.', argv['exclude-node_modules'])
   if (argv.debug) {
     console.info(dependencies)
   }

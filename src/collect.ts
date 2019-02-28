@@ -5,7 +5,8 @@ import * as path from 'path'
 const readFileAsync = util.promisify(fs.readFile)
 const readdirAsync = util.promisify(fs.readdir)
 
-export async function collectDependencies(targetPath: string) {
+// tslint:disable-next-line:cognitive-complexity
+export async function collectDependencies(targetPath: string, excludeNodeModules: boolean) {
   const dirPath = path.resolve(targetPath, 'packages')
   const packages = await readdirAsync(dirPath)
   const dependencies: { [name: string]: string[] } = {}
@@ -23,8 +24,16 @@ export async function collectDependencies(targetPath: string) {
         } = JSON.parse(packageJsonBuffer.toString())
         if (packageJson.dependencies) {
           dependencies[packageJson.name] = Object.keys(packageJson.dependencies)
+        } else {
+          dependencies[packageJson.name] = []
         }
       }
+    }
+  }
+  if (excludeNodeModules) {
+    const validPackageNames = new Set(Object.keys(dependencies))
+    for (const dependency in dependencies) {
+      dependencies[dependency] = dependencies[dependency].filter((d) => validPackageNames.has(d))
     }
   }
   return dependencies
