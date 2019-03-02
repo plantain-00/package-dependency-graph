@@ -46,6 +46,6 @@
     "package-dependency-graph": "bin/package-dependency-graph"
   },
   "typeCoverage": {
-    "atLeast": 94
+    "atLeast": 95
   }
 }

@@ -4,6 +4,7 @@ import * as util from 'util'
 
 import { collectDependencies } from './collect'
 import { toDotFile } from './dot'
+import { checkDependencies } from './check'
 
 import * as packageJson from '../package.json'
 
@@ -30,6 +31,15 @@ async function executeCommandLine() {
   if (argv.debug) {
     console.info(dependencies)
   }
+
+  if (argv.check) {
+    const result = checkDependencies(dependencies)
+    if (Object.keys(result).length > 0) {
+      console.info(result)
+      throw new Error('There are unnecessary dependencies.')
+    }
+  }
+
   const dot = toDotFile(dependencies)
   if (argv.dot && typeof argv.dot === 'string') {
     await writeFileAsync(argv.dot, dot)
