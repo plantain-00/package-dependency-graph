@@ -12,7 +12,7 @@
     "@commitlint/config-conventional": "8.0.0",
     "@types/jasmine": "3.3.13",
     "@types/minimist": "1.2.0",
-    "@types/node": "12.0.4",
+    "@types/node": "12.0.7",
     "clean-release": "2.7.0",
     "clean-scripts": "1.11.1",
     "jasmine": "3.4.0",
@@ -46,6 +46,6 @@
     "package-dependency-graph": "bin/package-dependency-graph"
   },
   "typeCoverage": {
-    "atLeast": 95
+    "atLeast": 100
   }
 }

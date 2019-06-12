@@ -8,7 +8,7 @@ import { checkDependencies } from './check'
 
 import * as packageJson from '../package.json'
 
-let suppressError = false
+let suppressError: boolean | undefined = false
 
 function showToolVersion() {
   console.log(`Version: ${packageJson.version}`)
@@ -17,7 +17,16 @@ function showToolVersion() {
 const writeFileAsync = util.promisify(fs.writeFile)
 
 async function executeCommandLine() {
-  const argv = minimist(process.argv.slice(2), { '--': true })
+  const argv = minimist(process.argv.slice(2), { '--': true }) as unknown as {
+    v?: boolean
+    version?: boolean
+    suppressError?: boolean
+    root?: string
+    ['exclude-node_modules']?: boolean
+    debug?: boolean
+    check?: boolean
+    dot?: boolean
+  }
 
   const showVersion = argv.v || argv.version
   if (showVersion) {
@@ -50,7 +59,7 @@ async function executeCommandLine() {
 
 executeCommandLine().then(() => {
   console.log(`package-dependency-graph success.`)
-}, error => {
+}, (error: Error) => {
   if (error instanceof Error) {
     console.log(error.message)
   } else {
