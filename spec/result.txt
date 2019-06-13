@@ -1,2 +1,3 @@
 { a: [ 'b' ], b: [] }
+[ 'a' ]
 package-dependency-graph success.

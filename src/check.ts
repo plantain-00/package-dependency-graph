@@ -28,3 +28,14 @@ function checkUnnecessaryDependencies(
     }
   }
 }
+
+export function getTopLevelPackages(dependencies: { [name: string]: string[] }) {
+  const values = Object.values(dependencies)
+  const result: string[] = []
+  for (const name in dependencies) {
+    if (values.every((v) => v.every((a) => a !== name))) {
+      result.push(name)
+    }
+  }
+  return result
+}

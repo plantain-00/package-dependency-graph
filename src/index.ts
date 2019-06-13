@@ -4,7 +4,7 @@ import * as util from 'util'
 
 import { collectDependencies } from './collect'
 import { toDotFile } from './dot'
-import { checkDependencies } from './check'
+import { checkDependencies, getTopLevelPackages } from './check'
 
 import * as packageJson from '../package.json'
 
@@ -46,6 +46,8 @@ async function executeCommandLine() {
     if (Object.keys(result).length > 0) {
       console.info(result)
       throw new Error('There are unnecessary dependencies.')
+    } else {
+      console.info(getTopLevelPackages(dependencies))
     }
   }
 
