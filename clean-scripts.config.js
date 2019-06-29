@@ -12,7 +12,7 @@ module.exports = {
   lint: {
     ts: `tslint ${tsFiles}`,
     js: `standard ${jsFiles}`,
-    export: `no-unused-export ${tsFiles}`,
+    export: `no-unused-export "src/**/*.ts" --strict --need-module tslib --ignore-module fs --ignore-module path --ignore-module util`,
     commit: `commitlint --from=HEAD~1`,
     markdown: `markdownlint README.md`,
     typeCoverage: 'type-coverage -p src --strict'
