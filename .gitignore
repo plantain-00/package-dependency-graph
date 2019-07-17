@@ -73,3 +73,4 @@ service-worker.js
 #**/*-*.png
 #index.html
 *.data
+dagre-result.png
