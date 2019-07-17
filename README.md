@@ -1,6 +1,6 @@
 # package-dependency-graph
 
-A CLI tool to generate a dependency graph of packages in a monorepo by graphviz.
+A CLI tool to generate a dependency graph of packages in a monorepo by graphviz or dagre.
 
 [![Dependency Status](https://david-dm.org/plantain-00/package-dependency-graph.svg)](https://david-dm.org/plantain-00/package-dependency-graph)
 [![devDependency Status](https://david-dm.org/plantain-00/package-dependency-graph/dev-status.svg)](https://david-dm.org/plantain-00/package-dependency-graph#info=devDependencies)
@@ -16,9 +16,19 @@ A CLI tool to generate a dependency graph of packages in a monorepo by graphviz.
 
 ## usage
 
+### graphviz
+
 1. install `graphviz`
 2. run `package-dependency-graph --dot foo.dot`
 3. run `dot -Tpng foo.dot > foo.png`
+
+![graphviz](./demo/graphviz.png)
+
+### dagre
+
+`package-dependency-graph --png foo.png`
+
+![dagre](./demo/dagre.png)
 
 ## arguments
 
@@ -26,6 +36,7 @@ name | type | description
 --- | --- | ---
 `--root` | string? | tell the CLI the root directory of project
 `--dot` | string? | save the dot file
+`--png` | string? | save the png file
 `--exclude-node_modules` | boolean? | exclude packages from `node_modules`
 `--check` | boolean? | check unnecessary dependencies
 `--debug` | boolean? | show debug info

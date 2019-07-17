@@ -1,10 +1,13 @@
 import minimist from 'minimist'
 import * as fs from 'fs'
 import * as util from 'util'
+import * as graphlibDot from 'graphlib-dot'
+import * as dagre from 'dagre'
 
 import { collectDependencies } from './collect'
 import { toDotFile } from './dot'
 import { checkDependencies, getTopLevelPackages } from './check'
+import { renderToCanvas } from './dagre'
 
 import * as packageJson from '../package.json'
 
@@ -25,7 +28,8 @@ async function executeCommandLine() {
     ['exclude-node_modules']?: boolean
     debug?: boolean
     check?: boolean
-    dot?: boolean
+    dot?: unknown
+    png?: unknown
   }
 
   const showVersion = argv.v || argv.version
@@ -56,6 +60,11 @@ async function executeCommandLine() {
     await writeFileAsync(argv.dot, dot)
   } else if (argv.debug) {
     console.info(dot)
+  }
+  if (argv.png && typeof argv.png === 'string') {
+    const graph = graphlibDot.read(dot)
+    const canvas = renderToCanvas(graph as unknown as dagre.graphlib.Graph, 12, 10)
+    await writeFileAsync(argv.png, canvas.toBuffer('image/png'))
   }
 }
 

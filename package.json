@@ -1,15 +1,20 @@
 {
   "name": "package-dependency-graph",
   "version": "1.3.0",
-  "description": "A CLI tool to generate a dependency graph of packages in a monorepo by graphviz.",
+  "description": "A CLI tool to generate a dependency graph of packages in a monorepo by graphviz or dagre.",
   "main": "index.js",
   "dependencies": {
+    "canvas": "^2.5.0",
+    "dagre": "^0.8.4",
+    "graphlib-dot": "^0.6.2",
     "minimist": "1",
     "tslib": "1"
   },
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
+    "@types/dagre": "0.7.42",
+    "@types/graphlib-dot": "0.6.1",
     "@types/jasmine": "3.3.13",
     "@types/minimist": "1.2.0",
     "@types/node": "12.6.2",
