@@ -5,8 +5,20 @@ const jsFiles = `"*.config.js"`
 
 module.exports = {
   build: [
-    'rimraf packages/core/dist/',
-    'tsc -p packages/core/src/',
+    {
+      core: [
+        'rimraf packages/core/dist/',
+        'tsc -p packages/core/src/'
+      ],
+      canvas: [
+        'rimraf packages/dagre-canvas/dist/',
+        'tsc -p packages/dagre-canvas/src/'
+      ],
+      svg: [
+        'rimraf packages/dagre-svg/dist/',
+        'tsc -p packages/dagre-svg/src/'
+      ]
+    },
     'rimraf packages/cli/dist/',
     'tsc -p packages/cli/src/',
     'node packages/cli/dist/index.js --dot spec/result.dot --png spec/dagre-result.png --svg spec/dagre-result.svg --debug --supressError > spec/result.txt'

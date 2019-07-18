@@ -1,13 +1,14 @@
 {
-  "name": "package-dependency-graph-core",
+  "name": "dagre-svg",
   "version": "1.4.0",
-  "description": "A Library to generate a dependency graph of packages in a monorepo by graphviz or dagre.",
+  "description": "A dagre svg renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/plantain-00/package-dependency-graph.git",
   "author": "york yao <yaoao12306@outlook.com>",
   "license": "MIT",
   "dependencies": {
+    "dagre": "^0.8.4",
     "tslib": "1"
   },
   "files": [

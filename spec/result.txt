@@ -1,8 +1,13 @@
 { 'package-dependency-graph':
    [ 'minimist',
+     'canvas',
      'dagre',
+     'dagre-canvas',
+     'dagre-svg',
      'graphlib-dot',
      'tslib',
      'package-dependency-graph-core' ],
-  'package-dependency-graph-core': [ 'canvas', 'dagre', 'tslib' ] }
+  'package-dependency-graph-core': [ 'tslib' ],
+  'dagre-canvas': [ 'dagre', 'tslib' ],
+  'dagre-svg': [ 'dagre', 'tslib' ] }
 package-dependency-graph success.

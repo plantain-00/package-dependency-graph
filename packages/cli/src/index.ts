@@ -3,8 +3,11 @@ import * as fs from 'fs'
 import * as util from 'util'
 import * as graphlibDot from 'graphlib-dot'
 import * as dagre from 'dagre'
+import { createCanvas } from 'canvas'
 
-import { collectDependencies, toDotFile, checkDependencies, getTopLevelPackages, renderToCanvas, renderToSvg } from 'package-dependency-graph-core'
+import { collectDependencies, toDotFile, checkDependencies, getTopLevelPackages } from 'package-dependency-graph-core'
+import { renderDagreToCanvas } from 'dagre-canvas'
+import { renderDagreToSvg } from 'dagre-svg'
 
 import * as packageJson from '../package.json'
 
@@ -61,12 +64,13 @@ async function executeCommandLine() {
   }
   if (argv.png && typeof argv.png === 'string') {
     const graph = graphlibDot.read(dot)
-    const canvas = renderToCanvas(graph as unknown as dagre.graphlib.Graph, 12, 10)
+    const canvas = createCanvas(300, 300)
+    renderDagreToCanvas(graph as unknown as dagre.graphlib.Graph, canvas as unknown as HTMLCanvasElement, 12, 10)
     await writeFileAsync(argv.png, canvas.toBuffer('image/png'))
   }
   if (argv.svg && typeof argv.svg === 'string') {
     const graph = graphlibDot.read(dot)
-    const svg = renderToSvg(graph as unknown as dagre.graphlib.Graph, 12, 10)
+    const svg = renderDagreToSvg(graph as unknown as dagre.graphlib.Graph, 12, 10)
     await writeFileAsync(argv.svg, svg)
   }
 }

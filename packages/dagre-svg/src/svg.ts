@@ -3,7 +3,7 @@ import * as dagre from 'dagre'
 /**
  * @public
  */
-export function renderToSvg(graph: dagre.graphlib.Graph, fontSize: number, margin: number) {
+export function renderDagreToSvg(graph: dagre.graphlib.Graph, fontSize: number, margin: number) {
   let childrenText = ''
   for (const node of graph.nodes()) {
     const nodeValue = graph.node(node)

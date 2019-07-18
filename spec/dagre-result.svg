@@ -2,12 +2,12 @@
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 0 670.464 216"
+  viewBox="0 0 993.616 216"
   color-interpolation-filters="sRGB"
 >
 <g>
       <rect
-        x="184.32799999999997"
+        x="303.262"
         y="10"
         width="197.984"
         height="32"
@@ -15,7 +15,7 @@
         fill="none"
       />
       <text text-anchor="middle"
-        x="283.32"
+        x="402.254"
         y="26"
         fill="black"
         dominant-baseline="middle"
@@ -41,15 +41,32 @@
       </text>
     </g><g>
       <rect
-        x="264.78"
-        y="174"
-        width="57.08"
+        x="139.32800000000003"
+        y="92"
+        width="64.49600000000001"
         height="32"
         stroke="#0000ff"
         fill="none"
       />
       <text text-anchor="middle"
-        x="293.32"
+        x="171.57600000000002"
+        y="108"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >canvas
+      </text>
+    </g><g>
+      <rect
+        x="265.03200000000004"
+        y="174"
+        width="57.08"
+        height="32"
+        stroke="#007f00"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="293.572"
         y="190"
         fill="black"
         dominant-baseline="middle"
@@ -58,15 +75,49 @@
       </text>
     </g><g>
       <rect
-        x="139.32800000000006"
+        x="273.82400000000007"
         y="92"
         width="108.992"
         height="32"
-        stroke="#007f00"
+        stroke="#007f7f"
         fill="none"
       />
       <text text-anchor="middle"
-        x="193.82400000000007"
+        x="328.32000000000005"
+        y="108"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >dagre_canvas
+      </text>
+    </g><g>
+      <rect
+        x="432.816"
+        y="92"
+        width="86.744"
+        height="32"
+        stroke="#007fff"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="476.188"
+        y="108"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >dagre_svg
+      </text>
+    </g><g>
+      <rect
+        x="569.5600000000001"
+        y="92"
+        width="108.992"
+        height="32"
+        stroke="#00ff00"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="624.056"
         y="108"
         fill="black"
         dominant-baseline="middle"
@@ -75,15 +126,15 @@
       </text>
     </g><g>
       <rect
-        x="404.58599999999996"
+        x="675.0120000000001"
         y="174"
         width="57.08"
         height="32"
-        stroke="#007f7f"
+        stroke="#00ff7f"
         fill="none"
       />
       <text text-anchor="middle"
-        x="433.126"
+        x="703.552"
         y="190"
         fill="black"
         dominant-baseline="middle"
@@ -92,15 +143,15 @@
       </text>
     </g><g>
       <rect
-        x="425.40000000000003"
+        x="748.5519999999999"
         y="92"
         width="235.064"
         height="32"
-        stroke="#007fff"
+        stroke="#00ffff"
         fill="none"
       />
       <text text-anchor="middle"
-        x="542.932"
+        x="866.084"
         y="108"
         fill="black"
         dominant-baseline="middle"
@@ -108,68 +159,81 @@
       >package_dependency_graph_core
       </text>
     </g><g>
-      <rect
-        x="542.5379999999999"
-        y="174"
-        width="64.49600000000001"
-        height="32"
-        stroke="#00ff00"
-        fill="none"
-      />
-      <text text-anchor="middle"
-        x="574.786"
-        y="190"
-        fill="black"
-        dominant-baseline="middle"
-        style="font-size:12px;font-family:sans-serif"
-      >canvas
-      </text>
-    </g><g>
       <polyline
-        points="192.13717073170733,42 49.66399999999999,67 49.66399999999999,92"
+        points="303.262,37.511024135681666 49.66399999999999,67 49.66399999999999,92"
         stroke="#00007f"
         fill="none"
       />
     </g><g>
       <polyline
-        points="283.32,42 283.32000000000005,67 283.32000000000005,108 283.32000000000005,149 289.4175609756098,174"
+        points="312.2333170731707,42 171.57600000000002,67 171.57600000000002,92"
         stroke="#0000ff"
         fill="none"
       />
     </g><g>
       <polyline
-        points="248.3947317073171,42 193.82400000000007,67 193.82400000000007,92"
+        points="338.4764390243903,42 238.82400000000007,67 238.82400000000007,108 238.82400000000007,149 272.2069268292683,174"
         stroke="#007f00"
         fill="none"
       />
     </g><g>
       <polyline
-        points="324.78965853658536,42 389.586,67 389.586,108 389.586,149 416.13478048780485,174"
+        points="373.4017073170732,42 328.32000000000005,67 328.32000000000005,92"
         stroke="#007f7f"
         fill="none"
       />
     </g><g>
       <polyline
-        points="382.312,41.63360707517372 542.932,67 542.932,92"
+        points="431.10629268292683,42 476.188,67 476.188,92"
         stroke="#007fff"
         fill="none"
       />
     </g><g>
       <polyline
-        points="555.3628292682927,124 574.786,149 574.786,174"
+        points="488.8108780487805,42 624.056,67 624.056,92"
         stroke="#00ff00"
         fill="none"
       />
     </g><g>
       <polyline
-        points="475.2847804878049,124 369.586,149 321.86,174.6571211286812"
-        stroke="#0000ff"
+        points="501.24600000000004,39.03789937616047 713.552,67 713.552,108 713.552,149 707.4544390243902,174"
+        stroke="#00ff7f"
         fill="none"
       />
     </g><g>
       <polyline
-        points="529.8432195121951,124 509.39199999999994,149 461.666,174.65712112868118"
-        stroke="#007f7f"
+        points="501.24600000000004,34.750343875989046 866.084,67 866.084,92"
+        stroke="#00ffff"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="866.084,124 866.084,149 732.092,182.80055619816406"
+        stroke="#00ff7f"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="314.75980487804884,124 293.572,149 293.572,174"
+        stroke="#007f00"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="353.26985365853665,124 392.254,149 675.0120000000001,186.24109374297296"
+        stroke="#00ff7f"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="451.2381463414634,124 412.254,149 322.112,180.14054363761986"
+        stroke="#007f00"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="518.6004878048781,124 584.87,149 675.0120000000001,180.14054363761986"
+        stroke="#00ff7f"
         fill="none"
       />
     </g>

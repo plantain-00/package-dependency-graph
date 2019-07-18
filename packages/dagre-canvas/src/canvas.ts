@@ -1,12 +1,13 @@
 import * as dagre from 'dagre'
-import { createCanvas } from 'canvas'
 
 /**
  * @public
  */
-export function renderToCanvas(graph: dagre.graphlib.Graph, fontSize: number, margin: number) {
-  const canvas = createCanvas(300, 300)
+export function renderDagreToCanvas(graph: dagre.graphlib.Graph, canvas: HTMLCanvasElement, fontSize: number, margin: number) {
   const ctx = canvas.getContext('2d')
+  if (!ctx) {
+    return
+  }
   for (const node of graph.nodes()) {
     const nodeValue = graph.node(node)
     ctx.textBaseline = 'middle'
@@ -58,7 +59,6 @@ export function renderToCanvas(graph: dagre.graphlib.Graph, fontSize: number, ma
     ctx.stroke()
     ctx.restore()
   }
-  return canvas
 }
 
 interface NodeValue extends dagre.Node {
