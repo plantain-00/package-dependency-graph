@@ -4,7 +4,7 @@ import * as util from 'util'
 import * as graphlibDot from 'graphlib-dot'
 import * as dagre from 'dagre'
 
-import { collectDependencies, toDotFile, checkDependencies, getTopLevelPackages, renderToCanvas } from 'package-dependency-graph-core'
+import { collectDependencies, toDotFile, checkDependencies, getTopLevelPackages, renderToCanvas, renderToSvg } from 'package-dependency-graph-core'
 
 import * as packageJson from '../package.json'
 
@@ -27,6 +27,7 @@ async function executeCommandLine() {
     check?: boolean
     dot?: unknown
     png?: unknown
+    svg?: unknown
   }
 
   const showVersion = argv.v || argv.version
@@ -62,6 +63,11 @@ async function executeCommandLine() {
     const graph = graphlibDot.read(dot)
     const canvas = renderToCanvas(graph as unknown as dagre.graphlib.Graph, 12, 10)
     await writeFileAsync(argv.png, canvas.toBuffer('image/png'))
+  }
+  if (argv.svg && typeof argv.svg === 'string') {
+    const graph = graphlibDot.read(dot)
+    const svg = renderToSvg(graph as unknown as dagre.graphlib.Graph, 12, 10)
+    await writeFileAsync(argv.svg, svg)
   }
 }
 

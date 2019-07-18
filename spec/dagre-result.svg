@@ -1,0 +1,176 @@
+<svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 670.464 216"
+  color-interpolation-filters="sRGB"
+>
+<g>
+      <rect
+        x="184.32799999999997"
+        y="10"
+        width="197.984"
+        height="32"
+        stroke="#000000"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="283.32"
+        y="26"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >package_dependency_graph
+      </text>
+    </g><g>
+      <rect
+        x="9.999999999999986"
+        y="92"
+        width="79.328"
+        height="32"
+        stroke="#00007f"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="49.66399999999999"
+        y="108"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >minimist
+      </text>
+    </g><g>
+      <rect
+        x="264.78"
+        y="174"
+        width="57.08"
+        height="32"
+        stroke="#0000ff"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="293.32"
+        y="190"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >dagre
+      </text>
+    </g><g>
+      <rect
+        x="139.32800000000006"
+        y="92"
+        width="108.992"
+        height="32"
+        stroke="#007f00"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="193.82400000000007"
+        y="108"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >graphlib_dot
+      </text>
+    </g><g>
+      <rect
+        x="404.58599999999996"
+        y="174"
+        width="57.08"
+        height="32"
+        stroke="#007f7f"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="433.126"
+        y="190"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >tslib
+      </text>
+    </g><g>
+      <rect
+        x="425.40000000000003"
+        y="92"
+        width="235.064"
+        height="32"
+        stroke="#007fff"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="542.932"
+        y="108"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >package_dependency_graph_core
+      </text>
+    </g><g>
+      <rect
+        x="542.5379999999999"
+        y="174"
+        width="64.49600000000001"
+        height="32"
+        stroke="#00ff00"
+        fill="none"
+      />
+      <text text-anchor="middle"
+        x="574.786"
+        y="190"
+        fill="black"
+        dominant-baseline="middle"
+        style="font-size:12px;font-family:sans-serif"
+      >canvas
+      </text>
+    </g><g>
+      <polyline
+        points="192.13717073170733,42 49.66399999999999,67 49.66399999999999,92"
+        stroke="#00007f"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="283.32,42 283.32000000000005,67 283.32000000000005,108 283.32000000000005,149 289.4175609756098,174"
+        stroke="#0000ff"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="248.3947317073171,42 193.82400000000007,67 193.82400000000007,92"
+        stroke="#007f00"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="324.78965853658536,42 389.586,67 389.586,108 389.586,149 416.13478048780485,174"
+        stroke="#007f7f"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="382.312,41.63360707517372 542.932,67 542.932,92"
+        stroke="#007fff"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="555.3628292682927,124 574.786,149 574.786,174"
+        stroke="#00ff00"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="475.2847804878049,124 369.586,149 321.86,174.6571211286812"
+        stroke="#0000ff"
+        fill="none"
+      />
+    </g><g>
+      <polyline
+        points="529.8432195121951,124 509.39199999999994,149 461.666,174.65712112868118"
+        stroke="#007f7f"
+        fill="none"
+      />
+    </g>
+</svg>

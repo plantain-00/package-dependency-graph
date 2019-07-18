@@ -9,7 +9,7 @@ module.exports = {
     'tsc -p packages/core/src/',
     'rimraf packages/cli/dist/',
     'tsc -p packages/cli/src/',
-    'node packages/cli/dist/index.js --dot spec/result.dot --png spec/dagre-result.png --debug --supressError > spec/result.txt'
+    'node packages/cli/dist/index.js --dot spec/result.dot --png spec/dagre-result.png --svg spec/dagre-result.svg --debug --supressError > spec/result.txt'
   ],
   lint: {
     ts: `tslint ${tsFiles}`,

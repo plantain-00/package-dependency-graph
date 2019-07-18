@@ -36,6 +36,7 @@ name | type | description
 `--root` | string? | tell the CLI the root directory of project
 `--dot` | string? | save the dot file
 `--png` | string? | save the png file
+`--svg` | string? | save the svg file
 `--exclude-node_modules` | boolean? | exclude packages from `node_modules`
 `--check` | boolean? | check unnecessary dependencies(not recommended)
 `--debug` | boolean? | show debug info

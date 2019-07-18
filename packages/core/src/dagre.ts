@@ -15,7 +15,7 @@ export function renderToCanvas(graph: dagre.graphlib.Graph, fontSize: number, ma
     nodeValue.width = textMetrics.width + margin * 2
     nodeValue.height = fontSize + margin * 2
   }
-  dagre.layout(graph as unknown as dagre.graphlib.Graph)
+  dagre.layout(graph)
   const label = (graph as unknown as { _label: { width: number, height: number } })._label
   const canvasWidth = label.width + margin * 2
   const canvasHeight = label.height + margin * 2
