@@ -1,6 +1,9 @@
 import * as dagre from 'dagre'
 import { createCanvas } from 'canvas'
 
+/**
+ * @public
+ */
 export function renderToCanvas(graph: dagre.graphlib.Graph, fontSize: number, margin: number) {
   const canvas = createCanvas(300, 300)
   const ctx = canvas.getContext('2d')

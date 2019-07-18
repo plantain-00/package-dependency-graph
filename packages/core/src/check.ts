@@ -1,3 +1,6 @@
+/**
+ * @public
+ */
 export function checkDependencies(dependencies: { [name: string]: string[] }) {
   const result: { [name: string]: Set<string> } = {}
   for (const packageName in dependencies) {
@@ -29,6 +32,9 @@ function checkUnnecessaryDependencies(
   }
 }
 
+/**
+ * @public
+ */
 export function getTopLevelPackages(dependencies: { [name: string]: string[] }) {
   const values = Object.values(dependencies)
   const result: string[] = []

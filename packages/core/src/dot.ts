@@ -1,3 +1,6 @@
+/**
+ * @public
+ */
 export function toDotFile(dependencies: { [name: string]: string[] }) {
   const nodes = new Map<string, string>()
   const maps: string[] = []

@@ -37,5 +37,5 @@ name | type | description
 `--dot` | string? | save the dot file
 `--png` | string? | save the png file
 `--exclude-node_modules` | boolean? | exclude packages from `node_modules`
-`--check` | boolean? | check unnecessary dependencies
+`--check` | boolean? | check unnecessary dependencies(not recommended)
 `--debug` | boolean? | show debug info

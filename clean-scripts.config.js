@@ -1,21 +1,24 @@
 const { checkGitStatus } = require('clean-scripts')
 
-const tsFiles = `"src/**/*.ts" "spec/**/*.ts"`
+const tsFiles = `"packages/**/src/**/*.ts" "spec/**/*.ts"`
 const jsFiles = `"*.config.js"`
 
 module.exports = {
   build: [
-    'rimraf dist/',
-    'tsc -p src/',
-    'node dist/index.js --dot spec/result.dot --png spec/dagre-result.png --debug --check --supressError > spec/result.txt'
+    'rimraf packages/core/dist/',
+    'tsc -p packages/core/src/',
+    'rimraf packages/cli/dist/',
+    'tsc -p packages/cli/src/',
+    'node packages/cli/dist/index.js --dot spec/result.dot --png spec/dagre-result.png --debug --supressError > spec/result.txt'
   ],
   lint: {
     ts: `tslint ${tsFiles}`,
     js: `standard ${jsFiles}`,
-    export: `no-unused-export "src/**/*.ts" --strict --need-module tslib --ignore-module fs --ignore-module path --ignore-module util`,
+    export: `no-unused-export ${tsFiles} --strict --need-module tslib`,
     commit: `commitlint --from=HEAD~1`,
     markdown: `markdownlint README.md`,
-    typeCoverage: 'type-coverage -p src --strict'
+    typeCoverageCore: 'type-coverage -p packages/core/src --strict',
+    typeCoverageCli: 'type-coverage -p packages/cli/src --strict'
   },
   test: [
     'tsc -p spec',

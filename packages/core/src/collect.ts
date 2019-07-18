@@ -5,6 +5,9 @@ import * as path from 'path'
 const readFileAsync = util.promisify(fs.readFile)
 const readdirAsync = util.promisify(fs.readdir)
 
+/**
+ * @public
+ */
 // tslint:disable-next-line:cognitive-complexity
 export async function collectDependencies(targetPath: string, excludeNodeModules = false) {
   const dirPath = path.resolve(targetPath, 'packages')

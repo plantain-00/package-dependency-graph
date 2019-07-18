@@ -4,10 +4,7 @@ import * as util from 'util'
 import * as graphlibDot from 'graphlib-dot'
 import * as dagre from 'dagre'
 
-import { collectDependencies } from './collect'
-import { toDotFile } from './dot'
-import { checkDependencies, getTopLevelPackages } from './check'
-import { renderToCanvas } from './dagre'
+import { collectDependencies, toDotFile, checkDependencies, getTopLevelPackages, renderToCanvas } from 'package-dependency-graph-core'
 
 import * as packageJson from '../package.json'
 
