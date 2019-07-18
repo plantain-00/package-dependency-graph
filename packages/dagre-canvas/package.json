@@ -1,6 +1,6 @@
 {
   "name": "dagre-canvas",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A dagre canvas renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

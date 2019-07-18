@@ -1,6 +1,6 @@
 {
   "name": "dagre-svg",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A dagre svg renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
