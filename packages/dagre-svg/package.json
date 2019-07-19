@@ -1,6 +1,6 @@
 {
   "name": "dagre-svg",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A dagre svg renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "dagre": "^0.8.4",
-    "dagre-abstract-renderer": "^1.5.0",
+    "dagre-abstract-renderer": "^1.6.0",
     "tslib": "1"
   },
   "files": [

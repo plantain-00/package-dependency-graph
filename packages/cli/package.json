@@ -1,6 +1,6 @@
 {
   "name": "package-dependency-graph",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A CLI tool to generate a dependency graph of packages in a monorepo by graphviz or dagre.",
   "repository": "https://github.com/plantain-00/package-dependency-graph.git",
   "author": "york yao <yaoao12306@outlook.com>",
@@ -8,10 +8,10 @@
   "dependencies": {
     "canvas": "^2.5.0",
     "dagre": "^0.8.4",
-    "dagre-canvas": "^1.5.0",
-    "dagre-svg": "^1.5.0",
+    "dagre-canvas": "^1.6.0",
+    "dagre-svg": "^1.6.0",
     "minimist": "1",
-    "package-dependency-graph-core": "^1.5.0",
+    "package-dependency-graph-core": "^1.6.0",
     "tslib": "1"
   },
   "files": [
