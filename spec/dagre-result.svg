@@ -2,24 +2,24 @@
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 0 993.784 298"
+  viewBox="0 0 834.792 298"
   color-interpolation-filters="sRGB"
 >
 <g >
       <rect
-    x="474.5019999999999"
+    x="400.568"
     y="10"
     width="197.984"
     height="32"
     stroke="#000000"
     fill="none"
   /><text text-anchor="middle"
-    x="573.4939999999999"
+    x="499.56"
     y="26"
     fill="black"
     dominant-baseline="middle"
     style="font-size:12px;font-family:sans-serif"
-  >package_dependency_graph
+  >package-dependency-graph
   </text>
     </g><g >
       <rect
@@ -39,14 +39,14 @@
   </text>
     </g><g >
       <rect
-    x="180.45200000000003"
+    x="265.59400000000005"
     y="256"
     width="57.08"
     height="32"
     stroke="#0000ff"
     fill="none"
   /><text text-anchor="middle"
-    x="208.99200000000002"
+    x="294.134"
     y="272"
     fill="black"
     dominant-baseline="middle"
@@ -67,7 +67,7 @@
     fill="black"
     dominant-baseline="middle"
     style="font-size:12px;font-family:sans-serif"
-  >dagre_canvas
+  >dagre-canvas
   </text>
     </g><g >
       <rect
@@ -83,34 +83,18 @@
     fill="black"
     dominant-baseline="middle"
     style="font-size:12px;font-family:sans-serif"
-  >dagre_svg
+  >dagre-svg
   </text>
     </g><g >
       <rect
-    x="592.9319999999999"
+    x="592.932"
     y="92"
-    width="108.992"
+    width="79.328"
     height="32"
     stroke="#007fff"
     fill="none"
   /><text text-anchor="middle"
-    x="647.4279999999999"
-    y="108"
-    fill="black"
-    dominant-baseline="middle"
-    style="font-size:12px;font-family:sans-serif"
-  >graphlib_dot
-  </text>
-    </g><g >
-      <rect
-    x="751.924"
-    y="92"
-    width="79.328"
-    height="32"
-    stroke="#00ff00"
-    fill="none"
-  /><text text-anchor="middle"
-    x="791.588"
+    x="632.596"
     y="108"
     fill="black"
     dominant-baseline="middle"
@@ -119,30 +103,30 @@
   </text>
     </g><g >
       <rect
-    x="748.7199999999999"
+    x="589.728"
     y="174"
     width="235.064"
     height="32"
-    stroke="#00ff7f"
+    stroke="#00ff00"
     fill="none"
   /><text text-anchor="middle"
-    x="866.252"
+    x="707.26"
     y="190"
     fill="black"
     dominant-baseline="middle"
     style="font-size:12px;font-family:sans-serif"
-  >package_dependency_graph_core
+  >package-dependency-graph-core
   </text>
     </g><g >
       <rect
-    x="578.1"
+    x="498.604"
     y="256"
     width="57.08"
     height="32"
-    stroke="#00ffff"
+    stroke="#00ff7f"
     fill="none"
   /><text text-anchor="middle"
-    x="606.64"
+    x="527.144"
     y="272"
     fill="black"
     dominant-baseline="middle"
@@ -155,7 +139,7 @@
     y="174"
     width="190.568"
     height="32"
-    stroke="#7f0000"
+    stroke="#00ffff"
     fill="none"
   /><text text-anchor="middle"
     x="349.276"
@@ -163,75 +147,75 @@
     fill="black"
     dominant-baseline="middle"
     style="font-size:12px;font-family:sans-serif"
-  >dagre_abstract_renderer
+  >dagre-abstract-renderer
   </text>
     </g><polyline
-    points="474.5019999999999,33.6399107005041 42.248000000000005,67 42.248000000000005,92"
+    points="400.568,34.87506122734588 42.248000000000005,67 42.248000000000005,92"
     stroke="#00007f"
     fill="none"
   /><polyline
-    points="474.5019999999999,34.74717563437774 109.49600000000004,67 109.49600000000004,108 109.49600000000004,149 109.49600000000004,190 109.49600000000004,231 180.45200000000003,260.2393262040685"
+    points="400.568,36.40514377127856 109.49600000000004,67 109.49600000000004,108 109.49600000000004,149 109.49600000000004,190 109.49600000000004,231 265.59400000000005,265.66251800821067"
     stroke="#0000ff"
     fill="none"
   /><polyline
-    points="474.5019999999999,36.837517556648564 198.99200000000002,67 198.99200000000002,92"
+    points="400.568,39.50334034228527 198.99200000000002,67 198.99200000000002,92"
     stroke="#007f00"
     fill="none"
   /><polyline
-    points="544.6417073170732,42 499.56,67 499.56,92"
+    points="499.56,42 499.56,67 499.56,92"
     stroke="#007f7f"
     fill="none"
   /><polyline
-    points="602.3462926829268,42 647.4279999999999,67 647.4279999999999,92"
+    points="551.476487804878,42 632.596,67 632.596,92"
     stroke="#007fff"
     fill="none"
   /><polyline
-    points="658.6038536585365,42 791.588,67 791.588,92"
+    points="580.6136585365854,42 707.26,67 707.26,108 707.26,149 707.26,174"
     stroke="#00ff00"
     fill="none"
   /><polyline
-    points="672.4859999999999,39.86357332677501 866.252,67 866.252,108 866.252,149 866.252,174"
+    points="598.552,37.26682804414933 859.7919999999999,67 859.7919999999999,108 859.7919999999999,149 859.7919999999999,190 859.7919999999999,231 555.684,268.4823477068854"
     stroke="#00ff7f"
     fill="none"
   /><polyline
-    points="672.4859999999999,35.114671337779875 1018.7839999999999,67 1018.7839999999999,108 1018.7839999999999,149 1018.7839999999999,190 1018.7839999999999,231 635.18,269.16084669435924"
-    stroke="#00ffff"
-    fill="none"
-  /><polyline
-    points="866.252,206 866.252,231 635.18,267.4927353126974"
-    stroke="#00ffff"
-    fill="none"
-  /><polyline
-    points="327.75717073170733,206 294.134,231 237.532,258.25660661013364"
+    points="674.5380487804878,206 623.41,231 322.67400000000004,268.44632466380784"
     stroke="#0000ff"
     fill="none"
   /><polyline
-    points="370.7948292682927,206 404.41800000000006,231 578.1,266.2135870478979"
-    stroke="#00ffff"
+    points="733.1199024390244,206 773.526,231 555.684,267.250708249791"
+    stroke="#00ff7f"
     fill="none"
   /><polyline
-    points="181.52936585365856,124 154.24400000000003,149 154.24400000000003,190 154.24400000000003,231 187.6269268292683,256"
+    points="327.75717073170733,206 294.134,231 294.134,256"
+    stroke="#0000ff"
+    fill="none"
+  /><polyline
+    points="370.7948292682927,206 404.418,231 498.604,262.4654270488731"
+    stroke="#00ff7f"
+    fill="none"
+  /><polyline
+    points="181.52936585365856,124 154.24400000000003,149 154.24400000000003,190 154.24400000000003,231 265.59400000000005,263.635284866681"
     stroke="#0000ff"
     fill="none"
   /><polyline
     points="198.99200000000002,124 198.99200000000002,149 290.62858536585367,174"
-    stroke="#7f0000"
-    fill="none"
-  /><polyline
-    points="206.7968780487805,124 218.99200000000002,149 218.99200000000002,190 218.99200000000002,231 578.1,268.9814367673766"
     stroke="#00ffff"
     fill="none"
   /><polyline
-    points="491.7551219512195,124 479.56,149 479.56,190 479.56,231 237.532,267.67524614884246"
+    points="206.7968780487805,124 218.99200000000002,149 218.99200000000002,190 218.99200000000002,231 498.604,268.20271813910017"
+    stroke="#00ff7f"
+    fill="none"
+  /><polyline
+    points="491.7551219512195,124 479.56,149 479.56,190 479.56,231 322.67400000000004,265.68945023890933"
     stroke="#0000ff"
     fill="none"
   /><polyline
     points="499.56,124 499.56,149 407.92341463414635,174"
-    stroke="#7f0000"
+    stroke="#00ffff"
     fill="none"
   /><polyline
-    points="542.932,123.18834984625897 616.64,149 616.64,190 616.64,231 610.5424390243902,256"
-    stroke="#00ffff"
+    points="514.2269268292682,124 537.144,149 537.144,190 537.144,231 531.0464390243902,256"
+    stroke="#00ff7f"
     fill="none"
   />
 </svg>

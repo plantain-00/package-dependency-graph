@@ -10,7 +10,6 @@
     "dagre": "^0.8.4",
     "dagre-canvas": "^1.5.0",
     "dagre-svg": "^1.5.0",
-    "graphlib-dot": "^0.6.2",
     "minimist": "1",
     "package-dependency-graph-core": "^1.5.0",
     "tslib": "1"

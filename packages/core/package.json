@@ -8,6 +8,7 @@
   "author": "york yao <yaoao12306@outlook.com>",
   "license": "MIT",
   "dependencies": {
+    "dagre": "^0.8.4",
     "tslib": "1"
   },
   "files": [

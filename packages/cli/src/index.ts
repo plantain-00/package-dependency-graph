@@ -1,11 +1,10 @@
 import minimist from 'minimist'
 import * as fs from 'fs'
 import * as util from 'util'
-import * as graphlibDot from 'graphlib-dot'
 import * as dagre from 'dagre'
 import { createCanvas } from 'canvas'
 
-import { collectDependencies, toDotFile, checkDependencies, getTopLevelPackages } from 'package-dependency-graph-core'
+import { collectDependencies, toDotFile, checkDependencies, getTopLevelPackages, toDagre } from 'package-dependency-graph-core'
 import { renderDagreToCanvas } from 'dagre-canvas'
 import { renderDagreToSvg } from 'dagre-svg'
 
@@ -63,13 +62,13 @@ async function executeCommandLine() {
     console.info(dot)
   }
   if (argv.png && typeof argv.png === 'string') {
-    const graph = graphlibDot.read(dot)
+    const graph = toDagre(dependencies)
     const canvas = createCanvas(300, 300)
     renderDagreToCanvas(graph as unknown as dagre.graphlib.Graph, canvas as unknown as HTMLCanvasElement, 12, 10)
     await writeFileAsync(argv.png, canvas.toBuffer('image/png'))
   }
   if (argv.svg && typeof argv.svg === 'string') {
-    const graph = graphlibDot.read(dot)
+    const graph = toDagre(dependencies)
     const svg = renderDagreToSvg(graph as unknown as dagre.graphlib.Graph, 12, 10)
     await writeFileAsync(argv.svg, svg)
   }

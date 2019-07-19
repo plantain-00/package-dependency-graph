@@ -1,3 +1,5 @@
 export * from './check'
 export * from './collect'
 export * from './dot'
+export * from './dagre'
+export * from './color'

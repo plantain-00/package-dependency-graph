@@ -1,9 +1,9 @@
 # package-dependency-graph-core
 
 ```ts
-import { collectDependencies } from 'package-dependency-graph-core'
+import { collectDependencies, toDotFile } from 'package-dependency-graph-core'
 
-console.info(await collectDependencies('.', true))
+const dependencies = await collectDependencies('.', true)
 /*
 { 'package-dependency-graph': [ 'dagre-canvas', 'dagre-svg', 'package-dependency-graph-core' ],
   'package-dependency-graph-core': [],
@@ -11,4 +11,8 @@ console.info(await collectDependencies('.', true))
   'dagre-canvas': [ 'dagre-abstract-renderer' ],
   'dagre-svg': [ 'dagre-abstract-renderer' ] }
 */
+
+const dot = toDotFile(dependencies)
+
+const dagre = toDagre(dependencies)
 ```

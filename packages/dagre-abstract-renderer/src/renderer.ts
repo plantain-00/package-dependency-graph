@@ -12,9 +12,9 @@ export function renderDagre<T>(graph: dagre.graphlib.Graph, target: RenderTarget
     nodeValue.height = fontSize + margin * 2
   }
   dagre.layout(graph)
-  const label = (graph as unknown as { _label: { width: number, height: number } })._label
-  const canvasWidth = label.width + margin * 2
-  const canvasHeight = label.height + margin * 2
+  const label = graph.graph()
+  const canvasWidth = label.width! + margin * 2
+  const canvasHeight = label.height! + margin * 2
   target.init(canvasWidth, canvasHeight)
   const children: T[] = []
   for (const node of graph.nodes()) {

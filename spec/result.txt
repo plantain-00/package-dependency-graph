@@ -3,11 +3,10 @@
      'dagre',
      'dagre-canvas',
      'dagre-svg',
-     'graphlib-dot',
      'minimist',
      'package-dependency-graph-core',
      'tslib' ],
-  'package-dependency-graph-core': [ 'tslib' ],
+  'package-dependency-graph-core': [ 'dagre', 'tslib' ],
   'dagre-abstract-renderer': [ 'dagre', 'tslib' ],
   'dagre-canvas': [ 'dagre', 'dagre-abstract-renderer', 'tslib' ],
   'dagre-svg': [ 'dagre', 'dagre-abstract-renderer', 'tslib' ] }
