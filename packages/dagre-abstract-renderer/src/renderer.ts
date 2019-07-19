@@ -30,6 +30,27 @@ export function renderDagre<T>(graph: dagre.graphlib.Graph, target: RenderTarget
   for (const edge of graph.edges()) {
     const edgeValue: GraphEdgeValue = graph.edge(edge)
     children.push(target.polyline(edgeValue.points.map((p) => ({ x: p.x + margin, y: p.y + margin })), edgeValue.color!))
+    const point1 = edgeValue.points[edgeValue.points.length - 2]
+    const point2 = edgeValue.points[edgeValue.points.length - 1]
+    const alpha = Math.atan((point2.x - point1.x) / (point1.y - point2.y))
+    const deltaAlpha = Math.PI / 12
+    const arrowSize = 10
+    const alpha1 = alpha - deltaAlpha
+    const alpha2 = alpha + deltaAlpha
+    children.push(target.polygon([
+      {
+        x: point2.x + margin,
+        y: point2.y + margin
+      },
+      {
+        x: point2.x + arrowSize * Math.sin(alpha1) + margin,
+        y: point2.y - arrowSize * Math.cos(alpha1) + margin
+      },
+      {
+        x: point2.x + arrowSize * Math.sin(alpha2) + margin,
+        y: point2.y - arrowSize * Math.cos(alpha2) + margin
+      }
+    ], edgeValue.color!))
   }
   return target.getResult(children, canvasWidth, canvasHeight)
 }

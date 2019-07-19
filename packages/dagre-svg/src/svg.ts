@@ -67,4 +67,12 @@ ${children.join('')}
     fill="none"
   />`
   }
+  polygon(points: { x: number; y: number; }[], color: string) {
+    const pointsText = points.map((p) => `${p.x},${p.y}`).join(' ')
+    return `<polygon
+    points="${pointsText}"
+    stroke="none"
+    fill="${color}"
+  />`
+  }
 }

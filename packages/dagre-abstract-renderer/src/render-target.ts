@@ -9,4 +9,5 @@ export interface RenderTarget<T> {
   strokeRect(x: number, y: number, width: number, height: number, color: string): T
   fillText(text: string, x: number, y: number, color: string, fontSize: number, fontFamily: string): T
   polyline(points: { x: number; y: number; }[], color: string): T
+  polygon(points: { x: number; y: number; }[], color: string): T
 }

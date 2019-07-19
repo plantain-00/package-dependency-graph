@@ -63,4 +63,17 @@ export class CanvasTarget implements RenderTarget<void> {
     }
     this.ctx.stroke()
   }
+  polygon(points: { x: number; y: number; }[], color: string) {
+    this.ctx.fillStyle = color
+    this.ctx.beginPath()
+    for (let i = 0; i < points.length; i++) {
+      const point = points[i]
+      if (i === 0) {
+        this.ctx.moveTo(point.x, point.y)
+      } else {
+        this.ctx.lineTo(point.x, point.y)
+      }
+    }
+    this.ctx.fill()
+  }
 }
