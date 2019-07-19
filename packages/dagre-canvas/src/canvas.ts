@@ -1,70 +1,66 @@
 import * as dagre from 'dagre'
+import { RenderTarget, renderDagre } from 'dagre-abstract-renderer'
 
 /**
  * @public
  */
 export function renderDagreToCanvas(graph: dagre.graphlib.Graph, canvas: HTMLCanvasElement, fontSize: number, margin: number) {
-  const ctx = canvas.getContext('2d')
-  if (!ctx) {
-    return
-  }
-  for (const node of graph.nodes()) {
-    const nodeValue = graph.node(node)
-    ctx.textBaseline = 'middle'
-    ctx.font = `${fontSize}px sans-serif`
-    const textMetrics = ctx.measureText(node)
-    nodeValue.width = textMetrics.width + margin * 2
-    nodeValue.height = fontSize + margin * 2
-  }
-  dagre.layout(graph)
-  const label = (graph as unknown as { _label: { width: number, height: number } })._label
-  const canvasWidth = label.width + margin * 2
-  const canvasHeight = label.height + margin * 2
-  canvas.width = canvasWidth
-  canvas.height = canvasHeight
-  ctx.fillStyle = 'white'
-  ctx.fillRect(0, 0, canvasWidth, canvasHeight)
-  for (const node of graph.nodes()) {
-    const nodeValue: NodeValue = graph.node(node)
-    ctx.save()
-    if (nodeValue.color) {
-      ctx.strokeStyle = nodeValue.color
-    }
-    ctx.beginPath()
-    ctx.strokeRect(nodeValue.x - nodeValue.width / 2 + margin, nodeValue.y - nodeValue.height / 2 + margin, nodeValue.width, nodeValue.height)
-    ctx.stroke()
+  renderDagre(graph, new CanvasTarget(canvas), fontSize, margin)
+}
 
-    ctx.fillStyle = 'black'
-    ctx.textBaseline = 'middle'
-    ctx.font = `${fontSize}px sans-serif`
-    const textMetrics = ctx.measureText(node)
-    ctx.fillText(node, nodeValue.x - textMetrics.width / 2 + margin, nodeValue.y + margin)
-    ctx.restore()
+/**
+ * @public
+ */
+export class CanvasTarget implements RenderTarget<void> {
+  public ctx: CanvasRenderingContext2D
+  constructor(public canvas: HTMLCanvasElement) {
+    this.ctx = canvas.getContext('2d')!
   }
-  for (const edge of graph.edges()) {
-    const edgeValue: GraphEdgeValue = graph.edge(edge)
-    ctx.save()
-    if (edgeValue.color) {
-      ctx.strokeStyle = edgeValue.color
-    }
-    ctx.beginPath()
-    for (let i = 0; i < edgeValue.points.length; i++) {
-      const point = edgeValue.points[i]
+  measureText(text: string, fontSize: number, fontFamily: string) {
+    this.ctx.textBaseline = 'middle'
+    this.ctx.font = `${fontSize}px ${fontFamily}`
+    const textMetrics = this.ctx.measureText(text)
+    return textMetrics.width
+  }
+  getResult() {
+    // do nothing
+  }
+  init(width: number, height: number) {
+    this.canvas.width = width
+    this.canvas.height = height
+    this.ctx.fillStyle = 'white'
+    this.ctx.fillRect(0, 0, width, height)
+  }
+  createNode(attributesAction: () => void, childrenAction: () => void) {
+    this.ctx.save()
+    attributesAction()
+    childrenAction()
+    this.ctx.restore()
+  }
+  strokeRect(x: number, y: number, width: number, height: number, color: string) {
+    this.ctx.strokeStyle = color
+    this.ctx.beginPath()
+    this.ctx.strokeRect(x, y, width, height)
+    this.ctx.stroke()
+  }
+  fillText(text: string, x: number, y: number, color: string, fontSize: number, fontFamily: string) {
+    this.ctx.fillStyle = color
+    this.ctx.textBaseline = 'middle'
+    this.ctx.font = `${fontSize}px ${fontFamily}`
+    const textMetrics = this.ctx.measureText(text)
+    this.ctx.fillText(text, x - textMetrics.width / 2, y)
+  }
+  polyline(points: { x: number; y: number; }[], color: string) {
+    this.ctx.strokeStyle = color
+    this.ctx.beginPath()
+    for (let i = 0; i < points.length; i++) {
+      const point = points[i]
       if (i === 0) {
-        ctx.moveTo(point.x + margin, point.y + margin)
+        this.ctx.moveTo(point.x, point.y)
       } else {
-        ctx.lineTo(point.x + margin, point.y + margin)
+        this.ctx.lineTo(point.x, point.y)
       }
     }
-    ctx.stroke()
-    ctx.restore()
+    this.ctx.stroke()
   }
-}
-
-interface NodeValue extends dagre.Node {
-  color?: string
-}
-
-interface GraphEdgeValue extends dagre.GraphEdge {
-  color?: string
 }

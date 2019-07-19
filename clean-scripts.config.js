@@ -1,26 +1,54 @@
-const { checkGitStatus } = require('clean-scripts')
+const { checkGitStatus, Tasks } = require('clean-scripts')
 
 const tsFiles = `"packages/**/src/**/*.ts" "spec/**/*.ts"`
 const jsFiles = `"*.config.js"`
 
 module.exports = {
   build: [
-    {
-      core: [
-        'rimraf packages/core/dist/',
-        'tsc -p packages/core/src/'
-      ],
-      canvas: [
-        'rimraf packages/dagre-canvas/dist/',
-        'tsc -p packages/dagre-canvas/src/'
-      ],
-      svg: [
-        'rimraf packages/dagre-svg/dist/',
-        'tsc -p packages/dagre-svg/src/'
-      ]
-    },
-    'rimraf packages/cli/dist/',
-    'tsc -p packages/cli/src/',
+    new Tasks([
+      {
+        name: 'dagre-abstract-renderer',
+        script: [
+          'rimraf packages/dagre-abstract-renderer/dist/',
+          'tsc -p packages/dagre-abstract-renderer/src/'
+        ]
+      },
+      {
+        name: 'core',
+        script: [
+          'rimraf packages/core/dist/',
+          'tsc -p packages/core/src/'
+        ]
+      },
+      {
+        name: 'dagre-canvas',
+        script: [
+          'rimraf packages/dagre-canvas/dist/',
+          'tsc -p packages/dagre-canvas/src/'
+        ],
+        dependencies: ['dagre-abstract-renderer']
+      },
+      {
+        name: 'dagre-svg',
+        script: [
+          'rimraf packages/dagre-svg/dist/',
+          'tsc -p packages/dagre-svg/src/'
+        ],
+        dependencies: ['dagre-abstract-renderer']
+      },
+      {
+        name: 'cli',
+        script: [
+          'rimraf packages/cli/dist/',
+          'tsc -p packages/cli/src/'
+        ],
+        dependencies: [
+          'core',
+          'dagre-canvas',
+          'dagre-svg'
+        ]
+      }
+    ]),
     'node packages/cli/dist/index.js --dot spec/result.dot --png spec/dagre-result.png --svg spec/dagre-result.svg --debug --supressError > spec/result.txt'
   ],
   lint: {

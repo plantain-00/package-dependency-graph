@@ -1,7 +1,7 @@
 {
-  "name": "dagre-canvas",
+  "name": "dagre-abstract-renderer",
   "version": "1.5.0",
-  "description": "A dagre canvas renderer.",
+  "description": "A dagre abstract renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/plantain-00/package-dependency-graph.git",
@@ -9,7 +9,6 @@
   "license": "MIT",
   "dependencies": {
     "dagre": "^0.8.4",
-    "dagre-abstract-renderer": "^1.5.0",
     "tslib": "1"
   },
   "files": [
