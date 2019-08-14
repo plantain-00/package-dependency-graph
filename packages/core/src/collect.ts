@@ -8,7 +8,6 @@ const readdirAsync = util.promisify(fs.readdir)
 /**
  * @public
  */
-// tslint:disable-next-line:cognitive-complexity
 export async function collectDependencies(targetPath: string, excludeNodeModules = false) {
   const dirPath = path.resolve(targetPath, 'packages')
   const packages = await readdirAsync(dirPath)
