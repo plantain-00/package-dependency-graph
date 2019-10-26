@@ -1,4 +1,4 @@
-const { checkGitStatus, Tasks } = require('clean-scripts')
+const { Tasks } = require('clean-scripts')
 
 const tsFiles = `"packages/**/src/**/*.ts" "spec/**/*.ts"`
 const jsFiles = `"*.config.js"`
@@ -64,8 +64,7 @@ module.exports = {
   },
   test: [
     'tsc -p spec',
-    'jasmine',
-    () => checkGitStatus()
+    'jasmine'
   ],
   fix: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles} --fix`
 }
