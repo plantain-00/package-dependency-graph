@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.5.0",
-    "dagre": "^0.8.4",
+    "dagre": "0.8.5",
     "dagre-canvas": "^1.6.0",
     "dagre-svg": "^1.6.0",
     "minimist": "1",
