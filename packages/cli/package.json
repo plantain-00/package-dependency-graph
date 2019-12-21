@@ -6,7 +6,7 @@
   "author": "york yao <yaoao12306@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "canvas": "^2.5.0",
+    "canvas": "2.6.1",
     "dagre": "0.8.5",
     "dagre-canvas": "^1.6.0",
     "dagre-svg": "^1.6.0",
