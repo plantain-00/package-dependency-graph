@@ -10,7 +10,7 @@
   "dependencies": {
     "dagre": "0.8.5",
     "dagre-abstract-renderer": "^1.6.0",
-    "tslib": "1"
+    "tslib": "2"
   },
   "files": [
     "dist"
