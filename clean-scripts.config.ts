@@ -1,9 +1,9 @@
-const { Tasks } = require('clean-scripts')
+import { Tasks } from 'clean-scripts'
 
-const tsFiles = `"packages/**/src/**/*.ts" "spec/**/*.ts"`
+const tsFiles = `"packages/**/src/**/*.ts"`
 const jsFiles = `"*.config.js"`
 
-module.exports = {
+export default {
   build: [
     new Tasks([
       {
@@ -62,9 +62,6 @@ module.exports = {
     typeCoverageSvg: 'type-coverage -p packages/dagre-svg/src --strict --ignore-files "**/*.d.ts"',
     typeCoveragerender: 'type-coverage -p packages/dagre-abstract-renderer/src --strict --ignore-files "**/*.d.ts"'
   },
-  test: [
-    'tsc -p spec',
-    'jasmine'
-  ],
+  test: [],
   fix: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles} --fix`
 }
