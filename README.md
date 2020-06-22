@@ -40,3 +40,5 @@ name | type | description
 `--exclude-node_modules` | boolean? | exclude packages from `node_modules`
 `--check` | boolean? | check unnecessary dependencies(not recommended)
 `--debug` | boolean? | show debug info
+`-h,--help` | boolean? | Print this message.
+`-v,--version` | boolean? | Print the version

@@ -16,6 +16,24 @@ function showToolVersion() {
   console.log(`Version: ${packageJson.version}`)
 }
 
+function showHelp() {
+  console.log(`Version ${packageJson.version}
+Syntax:   package-dependency-graph [options]
+Examples: package-dependency-graph --dot foo.dot
+          package-dependency-graph --png foo.png
+Options:
+ -h, --help                                         Print this message.
+ -v, --version                                      Print the version
+ --root                                             Tell the CLI the root directory of project
+ --dot                                              Save the dot file
+ --png                                              Save the png file
+ --svg                                              Save the svg file
+ --exclude-node_modules                             Exclude packages from node_modules
+ --check                                            Check unnecessary dependencies(not recommended)
+ --debug                                            Show debug info
+`)
+}
+
 const writeFileAsync = util.promisify(fs.writeFile)
 
 async function executeCommandLine() {
@@ -30,12 +48,19 @@ async function executeCommandLine() {
     dot?: unknown
     png?: unknown
     svg?: unknown
+    h?: unknown
+    help?: unknown
   }
 
   const showVersion = argv.v || argv.version
   if (showVersion) {
     showToolVersion()
     return
+  }
+
+  if (argv.h || argv.help) {
+    showHelp()
+    process.exit(0)
   }
 
   suppressError = argv.suppressError

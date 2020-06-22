@@ -5855,10 +5855,18 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-ts-lib-utils@2, ts-lib-utils@^2.7.1:
+ts-lib-utils@2:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/ts-lib-utils/-/ts-lib-utils-2.7.1.tgz#c95ac1cde845a0a5ba1fe30460d93ed5ed6a54f9"
   integrity sha512-d4e3En3ksgXYLdhCMu40tVRGUVED/oRygbfo7i5MTooTzdO3KM0cCcbaAqFwXmsxLEF5BKnCptW8DWDiJhK1DQ==
+  dependencies:
+    glob "7"
+    tslib "1 || 2"
+
+ts-lib-utils@^2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/ts-lib-utils/-/ts-lib-utils-2.7.2.tgz#8abd71d3665238422c7e342422f43030bf21bb6b"
+  integrity sha512-SBOsyeNB8ECoSQkwgYaecn2yVIY7WCFkcfzXIu0iGyg6gCC5bXGr+jwBbDVnUjAfN0MOI3J66gVLdnv/GYak3g==
   dependencies:
     glob "7"
     tslib "1 || 2"
@@ -5910,23 +5918,23 @@ type-check@^0.4.0, type-check@~0.4.0:
   dependencies:
     prelude-ls "^1.2.1"
 
-type-coverage-core@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.7.1.tgz#1512fc4bd2c0e432eaa466cd09d551592262d15f"
-  integrity sha512-Ki2EUe1+U8ds2TBGmBpZ9RARZa+AbHT8UOemmse3HIZky6n8eScaPiXP7HlaD8dMMf+nv0cU+JiKzQC1o4DoMw==
+type-coverage-core@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.8.2.tgz#447c15a8804d41b01365d405ce1cde7af5844349"
+  integrity sha512-Qv41QhEVTdxHXxojm0ZPUDk7fZ8ZrC9Ibg2vrCAVT+qy9AX2MQDg17r+X1u5fguZ9cPzSjWkX3EgJpTWvvDnWg==
   dependencies:
     minimatch "3"
-    ts-lib-utils "^2.7.1"
+    ts-lib-utils "^2.7.2"
     tslib "1 || 2"
     tsutils "3"
 
-type-coverage@2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.7.1.tgz#10e0d6d0c532b3637dd3d46bed3e29a06c0daa55"
-  integrity sha512-gYgCbFnm048Sy3VxD/3yI5mQDsrL1sFu3eXAju70Y+hm7K8/YiFPuL6F7nDTLvxVjXPTxr20CaY1HBT3TcOdgw==
+type-coverage@2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.8.2.tgz#bec082acef87e6245834889928bcee9075bfdaad"
+  integrity sha512-MZMR49i0+uDqZOpzPFK41yTjVoH3bigjgK6HnjuTFfnfyYuOgNsDP9rXQK0y2zwQ7VfeaU5Qhecq0XquUGo8lA==
   dependencies:
     minimist "1"
-    type-coverage-core "^2.7.1"
+    type-coverage-core "^2.8.2"
 
 type-fest@^0.11.0:
   version "0.11.0"
