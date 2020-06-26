@@ -1,7 +1,6 @@
 import { Tasks } from 'clean-scripts'
 
 const tsFiles = `"packages/**/src/**/*.ts"`
-const jsFiles = `"*.config.js"`
 
 export default {
   build: [
@@ -52,9 +51,8 @@ export default {
     'node packages/cli/dist/index.js --dot spec/result.dot --png spec/dagre-result.png --svg spec/dagre-result.svg --debug --supressError > spec/result.txt'
   ],
   lint: {
-    ts: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles}`,
+    ts: `eslint --ext .js,.ts,.tsx ${tsFiles}`,
     export: `no-unused-export ${tsFiles} --strict --need-module tslib`,
-    commit: `commitlint --from=HEAD~1`,
     markdown: `markdownlint README.md`,
     typeCoverageCore: 'type-coverage -p packages/core/src --strict --ignore-files "**/*.d.ts"',
     typeCoverageCli: 'type-coverage -p packages/cli/src --strict --ignore-files "**/*.d.ts"',
@@ -63,5 +61,5 @@ export default {
     typeCoveragerender: 'type-coverage -p packages/dagre-abstract-renderer/src --strict --ignore-files "**/*.d.ts"'
   },
   test: [],
-  fix: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles} --fix`
+  fix: `eslint --ext .js,.ts,.tsx ${tsFiles} --fix`
 }

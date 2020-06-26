@@ -3,8 +3,6 @@
   "description": "A CLI tool to generate a dependency graph of packages in a monorepo by graphviz or dagre.",
   "main": "index.js",
   "devDependencies": {
-    "@commitlint/cli": "9.0.1",
-    "@commitlint/config-conventional": "9.0.1",
     "@types/dagre": "0.7.44",
     "@types/graphlib-dot": "0.6.1",
     "@types/minimist": "1.2.0",
