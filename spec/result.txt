@@ -5,12 +5,11 @@
     'dagre-canvas',
     'dagre-svg',
     'minimist',
-    'package-dependency-graph-core',
-    'tslib'
+    'package-dependency-graph-core'
   ],
   'package-dependency-graph-core': [ 'dagre', 'tslib' ],
   'dagre-abstract-renderer': [ 'dagre', 'tslib' ],
-  'dagre-canvas': [ 'dagre', 'dagre-abstract-renderer', 'tslib' ],
-  'dagre-svg': [ 'dagre', 'dagre-abstract-renderer', 'tslib' ]
+  'dagre-canvas': [ 'dagre', 'dagre-abstract-renderer' ],
+  'dagre-svg': [ 'dagre', 'dagre-abstract-renderer' ]
 }
 package-dependency-graph success.

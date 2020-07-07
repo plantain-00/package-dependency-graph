@@ -11,8 +11,7 @@
     "dagre-canvas": "^1.7.0",
     "dagre-svg": "^1.7.0",
     "minimist": "1",
-    "package-dependency-graph-core": "^1.7.0",
-    "tslib": "2"
+    "package-dependency-graph-core": "^1.7.0"
   },
   "files": [
     "dist",

@@ -9,8 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "dagre": "0.8.5",
-    "dagre-abstract-renderer": "^1.7.0",
-    "tslib": "2"
+    "dagre-abstract-renderer": "^1.7.0"
   },
   "files": [
     "dist"
