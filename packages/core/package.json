@@ -1,6 +1,6 @@
 {
   "name": "package-dependency-graph-core",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "A Library to generate a dependency graph of packages in a monorepo by graphviz or dagre.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

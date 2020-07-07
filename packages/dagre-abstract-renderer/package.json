@@ -1,6 +1,6 @@
 {
   "name": "dagre-abstract-renderer",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "A dagre abstract renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
