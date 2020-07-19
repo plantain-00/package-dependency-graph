@@ -1,53 +1,17 @@
-import { Tasks } from 'clean-scripts'
+import { Tasks, readWorkspaceDependencies } from 'clean-scripts'
 
 const tsFiles = `"packages/**/src/**/*.ts"`
 
 export default {
   build: [
-    new Tasks([
-      {
-        name: 'dagre-abstract-renderer',
-        script: [
-          'rimraf packages/dagre-abstract-renderer/dist/',
-          'tsc -p packages/dagre-abstract-renderer/src/'
-        ]
-      },
-      {
-        name: 'core',
-        script: [
-          'rimraf packages/core/dist/',
-          'tsc -p packages/core/src/'
-        ]
-      },
-      {
-        name: 'dagre-canvas',
-        script: [
-          'rimraf packages/dagre-canvas/dist/',
-          'tsc -p packages/dagre-canvas/src/'
-        ],
-        dependencies: ['dagre-abstract-renderer']
-      },
-      {
-        name: 'dagre-svg',
-        script: [
-          'rimraf packages/dagre-svg/dist/',
-          'tsc -p packages/dagre-svg/src/'
-        ],
-        dependencies: ['dagre-abstract-renderer']
-      },
-      {
-        name: 'cli',
-        script: [
-          'rimraf packages/cli/dist/',
-          'tsc -p packages/cli/src/'
-        ],
-        dependencies: [
-          'core',
-          'dagre-canvas',
-          'dagre-svg'
-        ]
-      }
-    ]),
+    new Tasks(readWorkspaceDependencies().map((d) => ({
+      name: d.name,
+      script: [
+        `rimraf ${d.path}/dist/`,
+        `tsc -p ${d.path}/src/`
+      ],
+      dependencies: d.dependencies
+    }))),
     'node packages/cli/dist/index.js --dot spec/result.dot --png spec/dagre-result.png --svg spec/dagre-result.svg --debug --supressError > spec/result.txt'
   ],
   lint: {
