@@ -1,6 +1,6 @@
 {
   "name": "dagre-canvas",
-  "version": "1.7.1",
+  "version": "1.7.2-alpha.0",
   "description": "A dagre canvas renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "dagre": "0.8.5",
-    "dagre-abstract-renderer": "^1.7.1"
+    "dagre-abstract-renderer": "^1.7.2-alpha.0"
   },
   "files": [
     "dist"
