@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.8.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.8.0...v1.8.1) (2020-08-06)
+  
+* fix: forgot to publish bin ([cb9e9e8](https://github.com/plantain-00/package-dependency-graph/commit/cb9e9e8be0eb34cf160d0b28be50ea773ea953ea))
+
 ## [1.8.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.7.2-alpha.1...v1.8.0) (2020-08-05)
   
 * feat: use graphviz-cli to remove external graphviz dependency ([d0717f5](https://github.com/plantain-00/package-dependency-graph/commit/d0717f543460a013b21d4f920c28826705cd7624))
