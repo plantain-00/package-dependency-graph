@@ -1,14 +1,19 @@
 # Change Log
 
-## [1.7.2-alpha.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.7.2-alpha.0...v1.7.2-alpha.1) (2020-07-19)
+## [1.8.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.7.2-alpha.1...v1.8.0) (2020-08-05)
+  
+* feat: use graphviz-cli to remove external graphviz dependency ([d0717f5](https://github.com/plantain-00/package-dependency-graph/commit/d0717f543460a013b21d4f920c28826705cd7624))
+* docs: add contribute guide ([f146d1f](https://github.com/plantain-00/package-dependency-graph/commit/f146d1ff5600fecc05405d38d5660b89e1c8aa40))
+* chore: update dependencies ([c71c14b](https://github.com/plantain-00/package-dependency-graph/commit/c71c14b69744fa747e867697e531c71c01b1b8da)) ([544dc8d](https://github.com/plantain-00/package-dependency-graph/commit/544dc8d43c53054019ae02b34bda8dc3284c2ce1))
+
+### [1.7.2-alpha.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.7.2-alpha.0...v1.7.2-alpha.1) (2020-07-19)
   
 * chore: add changelog ([6b1791e](https://github.com/plantain-00/package-dependency-graph/commit/6b1791eb6f3e11ba78ba8ed1df806ff0153659aa))
 
-## [1.7.2-alpha.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.7.1...v1.7.2-alpha.0) (2020-07-19)
+### [1.7.2-alpha.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.7.1...v1.7.2-alpha.0) (2020-07-19)
   
 * feat: remove lerna ([401f049](https://github.com/plantain-00/package-dependency-graph/commit/401f049dc8736df9d16503dd4e3587ad321d0b77))
 * chore: update dependencies ([fdac1d3](https://github.com/plantain-00/package-dependency-graph/commit/fdac1d3801286182f7984db54d73be7cf487e043)) ([f8fdb24](https://github.com/plantain-00/package-dependency-graph/commit/f8fdb2489c8dc1daeacc67ae672de71be7d5caff))
-* build(deps): bump lodash from 4.17.15 to 4.17.19 ([413ac6f](https://github.com/plantain-00/package-dependency-graph/commit/413ac6f9f910e2555cc63060324c9cd7e2fa1f91))
 * docs: add github ci badge ([9a28db2](https://github.com/plantain-00/package-dependency-graph/commit/9a28db262844fc71a8b07171e903bd262871a611))
 * chore: remove tsconfig.eslint.json ([42b1b5a](https://github.com/plantain-00/package-dependency-graph/commit/42b1b5a3a2f897982caa354248c314b2658ffee2))
 
@@ -45,7 +50,7 @@
 
 ## [1.4.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.3.0...v1.4.0) (2019-07-17)
   
-* build: remove appveyor ([f073aff](https://github.com/plantain-00/package-dependency-graph/commit/f073affdc60d7416f07a478ffc92eb7656ccea2e)) ([45be4f8](https://github.com/plantain-00/package-dependency-graph/commit/45be4f823a692d999982545a1351196e30e2bf59))
+* build: remove appveyor ([f073aff](https://github.com/plantain-00/package-dependency-graph/commit/f073affdc60d7416f07a478ffc92eb7656ccea2e))
 * fix: ci failure ([838e4b9](https://github.com/plantain-00/package-dependency-graph/commit/838e4b9db43ded200dc34d1d298e46a2298c2b6e))
 * feat: support --png powered by dagre ([e3a0ab7](https://github.com/plantain-00/package-dependency-graph/commit/e3a0ab7bce1d82619c41847b2da300bbd0faaf7b))
 * chore: update dependencies ([38a85d2](https://github.com/plantain-00/package-dependency-graph/commit/38a85d259d37cac8d6b5bd6adb6d2541f78a1edd)) ([a6dfa45](https://github.com/plantain-00/package-dependency-graph/commit/a6dfa453c1ac17c57bcf0b653585e8fb0916d6af)) ([ef70e25](https://github.com/plantain-00/package-dependency-graph/commit/ef70e2562ced1c61f96de9e2c29da1f3cfe6f6ed))
