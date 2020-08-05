@@ -12,7 +12,8 @@ export default {
       ],
       dependencies: d.dependencies
     }))),
-    'node packages/cli/dist/index.js --dot spec/result.dot --png spec/dagre-result.png --svg spec/dagre-result.svg --debug --supressError > spec/result.txt'
+    'node packages/cli/dist/index.js --dot spec/result.dot --png demo/dagre.png --svg spec/dagre-result.svg --debug --supressError > spec/result.txt',
+    'node packages/cli/dist/index.js --graphviz --png demo/graphviz.png --svg spec/result.svg'
   ],
   lint: {
     ts: `eslint --ext .js,.ts,.tsx ${tsFiles}`,

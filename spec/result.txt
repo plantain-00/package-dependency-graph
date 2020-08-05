@@ -4,6 +4,7 @@
     'dagre',
     'dagre-canvas',
     'dagre-svg',
+    'graphviz-cli',
     'minimist',
     'package-dependency-graph-core'
   ],

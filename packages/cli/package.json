@@ -10,6 +10,7 @@
     "dagre": "0.8.5",
     "dagre-canvas": "^1.7.2-alpha.1",
     "dagre-svg": "^1.7.2-alpha.1",
+    "graphviz-cli": "1",
     "minimist": "1",
     "package-dependency-graph-core": "^1.7.1"
   },

@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@aduh95/viz.js@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/@aduh95/viz.js/download/@aduh95/viz.js-3.0.1.tgz#934768095b2ebc7d1720221a376a40b5d8977b39"
+  integrity sha1-k0doCVsuvH0XICIaN2pAtdiXezk=
+
 "@babel/code-frame@^7.0.0":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
@@ -684,6 +689,13 @@ graphlib@^2.1.8:
   integrity sha512-jcLLfkpoVGmH7/InMC/1hIvOPSUh38oJtGhvrOFGzioE1DZ+0YW16RgmOJhHiuWTvGiJQ9Z1Ik43JvkRPRvE+A==
   dependencies:
     lodash "^4.17.15"
+
+graphviz-cli@1:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/graphviz-cli/download/graphviz-cli-1.0.0.tgz#9a487ddce36b8f31a2cb27ad944f2126cb1b5d5d"
+  integrity sha1-mkh93ONrjzGiyyetlE8hJssbXV0=
+  dependencies:
+    "@aduh95/viz.js" "3.0.1"
 
 has-flag@^3.0.0:
   version "3.0.0"

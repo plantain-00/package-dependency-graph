@@ -3,6 +3,7 @@ import * as fs from 'fs'
 import * as util from 'util'
 import * as dagre from 'dagre'
 import { createCanvas } from 'canvas'
+import { renderGraphFromSource } from 'graphviz-cli'
 
 import { collectDependencies, toDotFile, checkDependencies, getTopLevelPackages, toDagre } from 'package-dependency-graph-core'
 import { renderDagreToCanvas } from 'dagre-canvas'
@@ -19,8 +20,10 @@ function showToolVersion() {
 function showHelp() {
   console.log(`Version ${packageJson.version}
 Syntax:   package-dependency-graph [options]
-Examples: package-dependency-graph --dot foo.dot
+Examples: package-dependency-graph --graphviz --png foo.png
+          package-dependency-graph --graphviz --svg foo.svg
           package-dependency-graph --png foo.png
+          package-dependency-graph --svg foo.svg
 Options:
  -h, --help                                         Print this message.
  -v, --version                                      Print the version
@@ -31,6 +34,7 @@ Options:
  --exclude-node_modules                             Exclude packages from node_modules
  --check                                            Check unnecessary dependencies(not recommended)
  --debug                                            Show debug info
+ --graphviz                                         Save graphviz styled png or svg file
 `)
 }
 
@@ -50,6 +54,7 @@ async function executeCommandLine() {
     svg?: unknown
     h?: unknown
     help?: unknown
+    graphviz?: unknown
   }
 
   const showVersion = argv.v || argv.version
@@ -87,14 +92,23 @@ async function executeCommandLine() {
     console.info(dot)
   }
   if (argv.png && typeof argv.png === 'string') {
-    const graph = toDagre(dependencies)
-    const canvas = createCanvas(300, 300)
-    renderDagreToCanvas(graph as unknown as dagre.graphlib.Graph, canvas as unknown as HTMLCanvasElement, 12, 10)
-    await writeFileAsync(argv.png, canvas.toBuffer('image/png'))
+    if (argv.graphviz) {
+      await renderGraphFromSource({ input: dot }, { format: 'png', engine: 'dot', name: argv.png })
+    } else {
+      const graph = toDagre(dependencies)
+      const canvas = createCanvas(300, 300)
+      renderDagreToCanvas(graph as unknown as dagre.graphlib.Graph, canvas as unknown as HTMLCanvasElement, 12, 10)
+      await writeFileAsync(argv.png, canvas.toBuffer('image/png'))
+    }
   }
   if (argv.svg && typeof argv.svg === 'string') {
-    const graph = toDagre(dependencies)
-    const svg = renderDagreToSvg(graph as unknown as dagre.graphlib.Graph, 12, 10)
+    let svg: string
+    if (argv.graphviz) {
+      svg = await renderGraphFromSource({ input: dot }, { format: 'svg', engine: 'dot' })
+    } else {
+      const graph = toDagre(dependencies)
+      svg = renderDagreToSvg(graph as unknown as dagre.graphlib.Graph, 12, 10)
+    }
     await writeFileAsync(argv.svg, svg)
   }
 }
