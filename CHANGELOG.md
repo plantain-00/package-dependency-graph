@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.8.2](https://github.com/plantain-00/package-dependency-graph/compare/v1.8.1...v1.8.2) (2020-08-07)
+  
+* docs: fix docs ([bb35e65](https://github.com/plantain-00/package-dependency-graph/commit/bb35e6504c8a1759a0f261714d4fe3a23db82172))
+* fix: travis failure ([aa589e5](https://github.com/plantain-00/package-dependency-graph/commit/aa589e544678a00dbb0bbb228f9595fc8f45e576))
+
 ## [1.8.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.8.0...v1.8.1) (2020-08-06)
   
 * fix: forgot to publish bin ([cb9e9e8](https://github.com/plantain-00/package-dependency-graph/commit/cb9e9e8be0eb34cf160d0b28be50ea773ea953ea))
