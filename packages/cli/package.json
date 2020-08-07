@@ -7,7 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "canvas": "2.6.1",
-    "dagre": "0.8.5",
     "dagre-canvas": "^1.8.2",
     "dagre-svg": "^1.8.2",
     "graphviz-cli": "1",

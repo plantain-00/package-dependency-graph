@@ -1,7 +1,6 @@
 import minimist from 'minimist'
 import * as fs from 'fs'
 import * as util from 'util'
-import * as dagre from 'dagre'
 import { createCanvas } from 'canvas'
 import { renderGraphFromSource } from 'graphviz-cli'
 
@@ -99,7 +98,7 @@ async function executeCommandLine() {
     } else {
       const graph = toDagre(dependencies)
       const canvas = createCanvas(300, 300)
-      renderDagreToCanvas(graph as unknown as dagre.graphlib.Graph, canvas as unknown as HTMLCanvasElement, 12, 10)
+      renderDagreToCanvas(graph, canvas as unknown as HTMLCanvasElement, 12, 10)
       await writeFileAsync(argv.png, canvas.toBuffer('image/png'))
     }
   }
@@ -109,7 +108,7 @@ async function executeCommandLine() {
       svg = await renderGraphFromSource({ input: dot }, { format: 'svg', engine: 'dot' })
     } else {
       const graph = toDagre(dependencies)
-      svg = renderDagreToSvg(graph as unknown as dagre.graphlib.Graph, 12, 10)
+      svg = renderDagreToSvg(graph, 12, 10)
     }
     await writeFileAsync(argv.svg, svg)
   }

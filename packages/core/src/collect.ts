@@ -9,17 +9,17 @@ const readdirAsync = util.promisify(fs.readdir)
  * @public
  */
 export async function collectDependencies(targetPath: string, excludeNodeModules = false, workspaces = ['packages']) {
-  const workspacesList = []
+  const workspacesList: Array<{ dirPath: string, packages: string[] }> = []
   const dependencies: { [name: string]: string[] } = {}
 
   for (const workspace of workspaces) {
     const dirPath = path.resolve(targetPath, workspace)
     const currentpPackages = await readdirAsync(dirPath)
-    workspacesList.push({dirPath, packages: currentpPackages})
+    workspacesList.push({ dirPath, packages: currentpPackages })
   }
 
   for (let i = 0; i < workspacesList.length; i++) {
-    const {dirPath, packages} = workspacesList[i]
+    const { dirPath, packages } = workspacesList[i]
 
     for (const packageName of packages) {
       const packagePath = path.resolve(dirPath, packageName)
