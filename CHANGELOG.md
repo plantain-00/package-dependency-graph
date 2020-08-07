@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.9.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.8.2...v1.9.0) (2020-08-08)
+  
+* chore: improve type coverage ([a139178](https://github.com/plantain-00/package-dependency-graph/commit/a139178e7438e8bcce2b0555527c7534f062d2e4))
+* feat: add new CLI flag `--workspaces` to make the packages resolution configurable ([c4dc32d](https://github.com/plantain-00/package-dependency-graph/commit/c4dc32d19e197f3602c194f297903e023f57cb2d))
+
 ## [1.8.2](https://github.com/plantain-00/package-dependency-graph/compare/v1.8.1...v1.8.2) (2020-08-07)
   
 * docs: fix docs ([bb35e65](https://github.com/plantain-00/package-dependency-graph/commit/bb35e6504c8a1759a0f261714d4fe3a23db82172))
