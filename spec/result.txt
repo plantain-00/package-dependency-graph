@@ -1,7 +1,6 @@
 {
   'package-dependency-graph': [
     'canvas',
-    'dagre',
     'dagre-canvas',
     'dagre-svg',
     'graphviz-cli',
