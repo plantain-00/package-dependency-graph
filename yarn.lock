@@ -1169,9 +1169,9 @@ npm-packlist@^1.1.6:
     npm-normalize-package-bin "^1.0.1"
 
 npm-version-cli@2:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/npm-version-cli/-/npm-version-cli-2.1.0.tgz#a0e6cf5c14341449b8c605ef62d7d0b721f0317b"
-  integrity sha512-G9BeJGMX9VtlwzvX1dvwd4v/e9SY+DuW+3uIX3VGaUFXuWcgURagHJ2kWPMM3uaZdR3wLFZuTHHKurVkuJfJaA==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/npm-version-cli/-/npm-version-cli-2.1.1.tgz#fd301d4207a16a2985e106bf5f35de533894732c"
+  integrity sha512-JqS0paRJLdZmRpWc3okwSBKqgesRcO9/ik3Ww9R75OcrJD4W3UCsWQM02eDpiJSIFHYO5z6/5xuz7WdlDSmmlg==
   dependencies:
     git-commits-to-changelog "1"
     glob "7"

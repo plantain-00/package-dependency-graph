@@ -1,7 +1,7 @@
 /**
  * @public
  */
-export function checkDependencies(dependencies: { [name: string]: string[] }) {
+export function checkDependencies(dependencies: { [name: string]: string[] }): { [name: string]: Set<string> } {
   const result: { [name: string]: Set<string> } = {}
   for (const packageName in dependencies) {
     for (const dependency of dependencies[packageName]) {
@@ -35,7 +35,7 @@ function checkUnnecessaryDependencies(
 /**
  * @public
  */
-export function getTopLevelPackages(dependencies: { [name: string]: string[] }) {
+export function getTopLevelPackages(dependencies: { [name: string]: string[] }): string[] {
   const values = Object.values(dependencies)
   const result: string[] = []
   for (const name in dependencies) {
