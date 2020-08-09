@@ -1,6 +1,6 @@
 {
   "name": "dagre-svg",
-  "version": "1.8.2",
+  "version": "1.9.1",
   "description": "A dagre svg renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,9 +9,9 @@
   "license": "MIT",
   "dependencies": {
     "dagre": "0.8.5",
-    "dagre-abstract-renderer": "^1.8.2"
+    "dagre-abstract-renderer": "^1.9.1"
   },
   "publishConfig": {
-    "registry":"https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/"
   }
 }

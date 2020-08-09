@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.9.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.9.0...v1.9.1) (2020-08-09)
+  
+* feat: add publishConfig in package.json ([ed6226f](https://github.com/plantain-00/package-dependency-graph/commit/ed6226f1497e723f768d15acdfecb26daf3ac5c6))
+* fix: dependency version not updated ([dbd6cfa](https://github.com/plantain-00/package-dependency-graph/commit/dbd6cfaf379166265d0d9d5a06249de88f323317))
+* build: improve release script ([e07957c](https://github.com/plantain-00/package-dependency-graph/commit/e07957c08da7dc823617f7992a900f6f0f378313))
+* chore: update dependencies ([4747e3a](https://github.com/plantain-00/package-dependency-graph/commit/4747e3aacb206c1511aaa0b74103e339f7ef774b))
+
 ## [1.9.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.8.2...v1.9.0) (2020-08-08)
   
 * chore: improve type coverage ([a139178](https://github.com/plantain-00/package-dependency-graph/commit/a139178e7438e8bcce2b0555527c7534f062d2e4))
