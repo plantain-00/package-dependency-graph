@@ -13,10 +13,9 @@
     "minimist": "1",
     "package-dependency-graph-core": "^1.7.1"
   },
-  "files": [
-    "dist",
-    "bin"
-  ],
+  "publishConfig": {
+    "registry":"https://registry.npmjs.org/"
+  },
   "bin": {
     "package-dependency-graph": "bin/package-dependency-graph"
   }

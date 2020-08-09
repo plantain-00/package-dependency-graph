@@ -11,7 +11,7 @@
     "dagre": "0.8.5",
     "dagre-abstract-renderer": "^1.8.2"
   },
-  "files": [
-    "dist"
-  ]
+  "publishConfig": {
+    "registry":"https://registry.npmjs.org/"
+  }
 }
