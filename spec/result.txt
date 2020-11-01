@@ -7,9 +7,10 @@
     'minimist',
     'package-dependency-graph-core'
   ],
-  'package-dependency-graph-core': [ 'dagre', 'tslib' ],
+  'package-dependency-graph-core': [ 'dagre', 'package-dependency-collect', 'tslib' ],
   'dagre-abstract-renderer': [ 'dagre', 'tslib' ],
   'dagre-canvas': [ 'dagre', 'dagre-abstract-renderer' ],
-  'dagre-svg': [ 'dagre', 'dagre-abstract-renderer' ]
+  'dagre-svg': [ 'dagre', 'dagre-abstract-renderer' ],
+  'package-dependency-collect': [ 'glob', 'tslib' ]
 }
 package-dependency-graph success.

@@ -1,15 +1,14 @@
 {
-  "name": "package-dependency-graph-core",
+  "name": "package-dependency-collect",
   "version": "1.9.1",
-  "description": "A Library to generate a dependency graph of packages in a monorepo by graphviz or dagre.",
+  "description": "A Library to collect dependencies of packages in a monorepo .",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/plantain-00/package-dependency-graph.git",
   "author": "york yao <yaoao12306@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "dagre": "0.8.5",
-    "package-dependency-collect": "^1.9.1",
+    "glob": "7",
     "tslib": "1 || 2"
   },
   "publishConfig": {
