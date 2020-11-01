@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.10.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.9.1...v1.10.0) (2020-11-01)
+  
+* feat: add readWorkspaceDependenciesAsync ([8213688](https://github.com/plantain-00/package-dependency-graph/commit/8213688309ec7853238ec30686c5b31941702e39))
+* chore: update dependencies ([6f64749](https://github.com/plantain-00/package-dependency-graph/commit/6f64749cf29306c9657d02188171036e14309656)) ([4fe99ac](https://github.com/plantain-00/package-dependency-graph/commit/4fe99ac332b605d529b023f1224f868e6732ae6e)) ([ba0248d](https://github.com/plantain-00/package-dependency-graph/commit/ba0248d48c598160b1d06c0ecaef0cd8572a396f)) ([1bbad2b](https://github.com/plantain-00/package-dependency-graph/commit/1bbad2b9eb17a5fd3781756d964bc5490754e8a7)) ([03dfd57](https://github.com/plantain-00/package-dependency-graph/commit/03dfd57fef06b496f96489b8655aca8b33cdfc72)) ([45131ba](https://github.com/plantain-00/package-dependency-graph/commit/45131bab8ff90d7b8b2f5ba8c0e4d7759a641c95)) ([d732b15](https://github.com/plantain-00/package-dependency-graph/commit/d732b15c9e7f7c73eb104f510421b01651041232)) ([3a8ca93](https://github.com/plantain-00/package-dependency-graph/commit/3a8ca9381a03da3e6bf7a84a6ec433f90e3c56b7)) ([9b548f6](https://github.com/plantain-00/package-dependency-graph/commit/9b548f68a6a4fd0bec46e5ce7b7c2f8b94835332)) ([c856927](https://github.com/plantain-00/package-dependency-graph/commit/c856927aab4e2c915d48f63b4ada92954f55a880)) ([6967753](https://github.com/plantain-00/package-dependency-graph/commit/6967753d114fb68e2d87e26b3df289a6252af0f2))
+* fix: add missing parserOptions ([317faa9](https://github.com/plantain-00/package-dependency-graph/commit/317faa990895484bbf7ec1fbd3c011409585e05c))
+
 ## [1.9.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.9.0...v1.9.1) (2020-08-09)
   
 * feat: add publishConfig in package.json ([ed6226f](https://github.com/plantain-00/package-dependency-graph/commit/ed6226f1497e723f768d15acdfecb26daf3ac5c6))
