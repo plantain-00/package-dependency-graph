@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.10.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.10.0...v1.10.1) (2020-11-01)
+  
+* feat: add readWorkspaceDependencies ([8f0cf66](https://github.com/plantain-00/package-dependency-graph/commit/8f0cf66c5d41dcc08e05f5795f11410093f3fbd7))
+
 ## [1.10.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.9.1...v1.10.0) (2020-11-01)
   
 * feat: add readWorkspaceDependenciesAsync ([8213688](https://github.com/plantain-00/package-dependency-graph/commit/8213688309ec7853238ec30686c5b31941702e39))
