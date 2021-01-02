@@ -21,9 +21,10 @@ export default {
     markdown: `markdownlint README.md`,
     typeCoverageCore: 'type-coverage -p packages/core/src --strict --ignore-files "**/*.d.ts"',
     typeCoverageCli: 'type-coverage -p packages/cli/src --strict --ignore-files "**/*.d.ts"',
-    typeCoveragecanvas: 'type-coverage -p packages/dagre-canvas/src --strict --ignore-files "**/*.d.ts"',
+    typeCoverageCanvas: 'type-coverage -p packages/dagre-canvas/src --strict --ignore-files "**/*.d.ts"',
     typeCoverageSvg: 'type-coverage -p packages/dagre-svg/src --strict --ignore-files "**/*.d.ts"',
-    typeCoveragerender: 'type-coverage -p packages/dagre-abstract-renderer/src --strict --ignore-files "**/*.d.ts"'
+    typeCoverageRender: 'type-coverage -p packages/dagre-abstract-renderer/src --strict --ignore-files "**/*.d.ts"',
+    typeCoverageDependency: 'type-coverage -p packages/dependency/src --strict --ignore-files "**/*.d.ts"'
   },
   test: [],
   fix: `eslint --ext .js,.ts,.tsx ${tsFiles} --fix`
