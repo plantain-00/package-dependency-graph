@@ -1,5 +1,5 @@
 import * as dagre from 'dagre'
-import { RenderTarget, renderDagre } from 'dagre-abstract-renderer'
+import { RenderTarget, renderDagre, Point } from 'dagre-abstract-renderer'
 
 /**
  * @public
@@ -59,7 +59,7 @@ ${children.join('')}
   >${text}
   </text>`
   }
-  polyline(points: { x: number; y: number; }[], color: string) {
+  polyline(points: Point[], color: string) {
     const pointsText = points.map((p) => `${p.x},${p.y}`).join(' ')
     return `<polyline
     points="${pointsText}"
@@ -67,12 +67,26 @@ ${children.join('')}
     fill="none"
   />`
   }
-  polygon(points: { x: number; y: number; }[], color: string) {
+  polygon(points: Point[], color: string) {
     const pointsText = points.map((p) => `${p.x},${p.y}`).join(' ')
     return `<polygon
     points="${pointsText}"
     stroke="none"
     fill="${color}"
+  />`
+  }
+  quadraticCurveTo(p0: Point, p1: Point, p2: Point, color: string) {
+    return `<path
+    d="M ${p0.x} ${p0.y} Q ${p1.x} ${p1.y} ${p2.x} ${p2.y}"
+    stroke="${color}"
+    fill="none"
+  />`
+  }
+  bezierCurveTo(p0: Point, p1: Point, p2: Point, p3: Point, color: string) {
+    return `<path
+    d="M ${p0.x} ${p0.y} C ${p1.x} ${p1.y} ${p2.x} ${p2.y} ${p3.x} ${p3.y}"
+    stroke="${color}"
+    fill="none"
   />`
   }
 }
