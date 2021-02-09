@@ -30,7 +30,6 @@ Options:
  --dot                                              Save the dot file
  --png                                              Save the png file
  --svg                                              Save the svg file
- --workspaces                                       Define custom workspaces paths separated by coma
  --exclude-node_modules                             Exclude packages from node_modules
  --check                                            Check unnecessary dependencies(not recommended)
  --debug                                            Show debug info
@@ -46,7 +45,6 @@ async function executeCommandLine() {
     version?: boolean
     suppressError?: boolean
     root?: string
-    workspaces?: string
     ['exclude-node_modules']?: boolean
     debug?: boolean
     check?: boolean
@@ -71,7 +69,7 @@ async function executeCommandLine() {
 
   suppressError = argv.suppressError
 
-  const dependencies = await collectDependencies(argv.root || '.', argv['exclude-node_modules'], argv['workspaces']? String(argv['workspaces']).split(','): ['packages'])
+  const dependencies = await collectDependencies(argv.root || '.', argv['exclude-node_modules'])
   if (argv.debug) {
     console.info(dependencies)
   }

@@ -17,16 +17,6 @@ export function renderDagre<T>(graph: dagre.graphlib.Graph, target: RenderTarget
   const canvasHeight = label.height! + margin * 2
   target.init(canvasWidth, canvasHeight)
   const children: T[] = []
-  for (const node of graph.nodes()) {
-    const nodeValue: NodeValue = graph.node(node)
-    children.push(target.createNode(
-      () => [],
-      () => [
-        target.strokeRect(nodeValue.x - nodeValue.width / 2 + margin, nodeValue.y - nodeValue.height / 2 + margin, nodeValue.width, nodeValue.height, nodeValue.color!),
-        target.fillText(node, nodeValue.x + margin, nodeValue.y + margin, 'black', fontSize, 'sans-serif')
-      ]
-    ))
-  }
   for (const edge of graph.edges()) {
     const edgeValue: GraphEdgeValue = graph.edge(edge)
     children.push(target.polyline(edgeValue.points.map((p) => ({ x: p.x + margin, y: p.y + margin })), edgeValue.color!))
@@ -51,6 +41,16 @@ export function renderDagre<T>(graph: dagre.graphlib.Graph, target: RenderTarget
         y: point2.y - arrowSize * Math.cos(alpha2) + margin
       }
     ], edgeValue.color!))
+  }
+  for (const node of graph.nodes()) {
+    const nodeValue: NodeValue = graph.node(node)
+    children.push(target.createNode(
+      () => [],
+      () => [
+        target.strokeRect(nodeValue.x - nodeValue.width / 2 + margin, nodeValue.y - nodeValue.height / 2 + margin, nodeValue.width, nodeValue.height, nodeValue.color!),
+        target.fillText(node, nodeValue.x + margin, nodeValue.y + margin, 'black', fontSize, 'sans-serif')
+      ]
+    ))
   }
   return target.getResult(children, canvasWidth, canvasHeight)
 }
