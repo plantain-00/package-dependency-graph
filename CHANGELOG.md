@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.11.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.11.0...v1.11.1) (2021-02-10)
+  
+* feat: improve dagre edge arrow style ([d4667bf](https://github.com/plantain-00/package-dependency-graph/commit/d4667bf3060c1baae97292f8cdf5d6dfb3eb36e4))
+
 ## [1.11.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.10.1...v1.11.0) (2021-02-09)
   
 * feat: improve dagre graph ([5eb810a](https://github.com/plantain-00/package-dependency-graph/commit/5eb810a677dc1b2f1903660f815b3278d652b29c))
