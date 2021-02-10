@@ -13,14 +13,31 @@ export function renderDagre<T>(graph: dagre.graphlib.Graph, target: RenderTarget
   }
   dagre.layout(graph)
   const label = graph.graph()
-  const canvasWidth = label.width! + margin * 2
-  const canvasHeight = label.height! + margin * 2
+
+  let offsetX = 0
+  let offsetY = 0
+  for (const edge of graph.edges()) {
+    const edgeValue = graph.edge(edge);
+    for (const point of edgeValue.points) {
+      if (point.x < offsetX) {
+        offsetX = point.x
+      }
+      if (point.y < offsetY) {
+        offsetY = point.y
+      }
+    }
+  }
+  const marginX = margin - offsetX
+  const marginY = margin - offsetY
+  const canvasWidth = label.width! + margin + marginX
+  const canvasHeight = label.height! + margin + marginY
+  
   target.init(canvasWidth, canvasHeight)
   const children: T[] = []
   for (const edge of graph.edges()) {
     const edgeValue: GraphEdgeValue = graph.edge(edge)
     const edgeColor = edgeValue.color!
-    const points = edgeValue.points.map((p) => ({ x: p.x + margin, y: p.y + margin }))
+    const points = edgeValue.points.map((p) => ({ x: p.x + marginX, y: p.y + marginY }))
 
     const point1 = points[points.length - 2]
     const point2 = points[points.length - 1]
@@ -49,10 +66,14 @@ export function renderDagre<T>(graph: dagre.graphlib.Graph, target: RenderTarget
     } else if (points.length === 5) {
       children.push(target.quadraticCurveTo(points[0], points[1], points[2], edgeColor))
       children.push(target.quadraticCurveTo(points[2], points[3], points[4], edgeColor))
+    } else if (points.length > 6) {
+      children.push(target.quadraticCurveTo(points[0], points[1], points[2], edgeColor))
+      children.push(target.polyline(points.slice(2, points.length - 2), edgeColor))
+      children.push(target.quadraticCurveTo(points[points.length - 3], points[points.length - 2], points[points.length - 1], edgeColor))
     } else {
       children.push(target.polyline(points, edgeColor))
     }
-    
+
     children.push(target.polygon([
       point2,
       arrow1,
@@ -64,8 +85,8 @@ export function renderDagre<T>(graph: dagre.graphlib.Graph, target: RenderTarget
     children.push(target.createNode(
       () => [],
       () => [
-        target.strokeRect(nodeValue.x - nodeValue.width / 2 + margin, nodeValue.y - nodeValue.height / 2 + margin, nodeValue.width, nodeValue.height, nodeValue.color!),
-        target.fillText(node, nodeValue.x + margin, nodeValue.y + margin, 'black', fontSize, 'sans-serif')
+        target.strokeRect(nodeValue.x - nodeValue.width / 2 + marginX, nodeValue.y - nodeValue.height / 2 + marginY, nodeValue.width, nodeValue.height, nodeValue.color!),
+        target.fillText(node, nodeValue.x + marginX, nodeValue.y + marginY, 'black', fontSize, 'sans-serif')
       ]
     ))
   }
