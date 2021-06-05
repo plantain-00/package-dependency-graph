@@ -4,7 +4,6 @@ A CLI tool to generate a dependency graph of packages in a monorepo by graphviz 
 
 [![Dependency Status](https://david-dm.org/plantain-00/package-dependency-graph.svg)](https://david-dm.org/plantain-00/package-dependency-graph)
 [![devDependency Status](https://david-dm.org/plantain-00/package-dependency-graph/dev-status.svg)](https://david-dm.org/plantain-00/package-dependency-graph#info=devDependencies)
-[![Build Status: Linux](https://travis-ci.org/plantain-00/package-dependency-graph.svg?branch=master)](https://travis-ci.org/plantain-00/package-dependency-graph)
 ![Github CI](https://github.com/plantain-00/package-dependency-graph/workflows/Github%20CI/badge.svg)
 [![npm version](https://badge.fury.io/js/package-dependency-graph.svg)](https://badge.fury.io/js/package-dependency-graph)
 [![Downloads](https://img.shields.io/npm/dm/package-dependency-graph.svg)](https://www.npmjs.com/package/package-dependency-graph)
