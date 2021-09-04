@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "../dist",
     "module": "commonjs",
+    "noUncheckedIndexedAccess": false,
     "declaration": true
   },
   "files": [

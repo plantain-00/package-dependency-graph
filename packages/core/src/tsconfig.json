@@ -4,6 +4,7 @@
     "outDir": "../dist",
     "module": "commonjs",
     "target": "ES2018",
+    "noUncheckedIndexedAccess": false,
     "declaration": true
   },
   "files": [
