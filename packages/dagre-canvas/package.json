@@ -1,6 +1,6 @@
 {
   "name": "dagre-canvas",
-  "version": "1.11.2",
+  "version": "1.11.3",
   "description": "A dagre canvas renderer.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "dagre": "0.8.5",
-    "dagre-abstract-renderer": "^1.11.2"
+    "dagre-abstract-renderer": "^1.11.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
