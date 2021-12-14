@@ -1,6 +1,6 @@
 {
   "name": "package-dependency-collect",
-  "version": "1.11.3",
+  "version": "1.12.0",
   "description": "A Library to collect dependencies of packages in a monorepo .",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

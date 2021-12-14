@@ -1,6 +1,6 @@
 {
   "name": "package-dependency-graph",
-  "version": "1.11.3",
+  "version": "1.12.0",
   "description": "A CLI tool to generate a dependency graph of packages in a monorepo by graphviz or dagre.",
   "repository": "https://github.com/plantain-00/package-dependency-graph.git",
   "author": "york yao <yaoao12306@outlook.com>",
@@ -11,7 +11,7 @@
     "dagre-svg": "^1.11.3",
     "graphviz-cli": "1",
     "minimist": "1",
-    "package-dependency-graph-core": "^1.11.3"
+    "package-dependency-graph-core": "^1.12.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

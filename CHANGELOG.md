@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.12.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.11.3...v1.12.0) (2021-12-14)
+  
+* feat: support --include-dev-dependencies and --include-peer-dependencies ([c78413e](https://github.com/plantain-00/package-dependency-graph/commit/c78413e72d2cfefb3dbe4f579a233ea5eb35ea3e))
+* chore: update dependencies ([87b3433](https://github.com/plantain-00/package-dependency-graph/commit/87b3433059f9e214e81abf5cea6417b79cdc0c74)) ([75b0d81](https://github.com/plantain-00/package-dependency-graph/commit/75b0d81be0c8b8c373b653c41abf27f411a14bd1)) ([812da0b](https://github.com/plantain-00/package-dependency-graph/commit/812da0b694e8f52812b021ed43f2b5708d1fcc4d))
+
 ## [1.11.3](https://github.com/plantain-00/package-dependency-graph/compare/v1.11.2...v1.11.3) (2021-11-03)
   
 * chore: update canvas version ([f17dfca](https://github.com/plantain-00/package-dependency-graph/commit/f17dfca661c32bb103ec9d7b026f03bae2195286))
