@@ -31,6 +31,8 @@ Options:
  --png                                              Save the png file
  --svg                                              Save the svg file
  --exclude-node_modules                             Exclude packages from node_modules
+ --include-dev-dependencies                         Include devDependencies packages
+ --include-peer-dependencies                        Include peerDependencies packages
  --check                                            Check unnecessary dependencies(not recommended)
  --debug                                            Show debug info
  --graphviz                                         Save graphviz styled png or svg file
@@ -46,6 +48,8 @@ async function executeCommandLine() {
     suppressError?: boolean
     root?: string
     ['exclude-node_modules']?: boolean
+    ['include-dev-dependencies']?: boolean
+    ['include-peer-dependencies']?: boolean
     debug?: boolean
     check?: boolean
     dot?: unknown
@@ -69,7 +73,13 @@ async function executeCommandLine() {
 
   suppressError = argv.suppressError
 
-  const dependencies = await collectDependencies(argv.root || '.', argv['exclude-node_modules'])
+  const dependencies = await collectDependencies(
+    argv.root || '.',
+    argv['exclude-node_modules'],
+    undefined,
+    argv['include-dev-dependencies'],
+    argv['include-peer-dependencies'],
+  )
   if (argv.debug) {
     console.info(dependencies)
   }

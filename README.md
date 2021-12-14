@@ -36,6 +36,8 @@ name | type | description
 `--png` | string? | save the png file
 `--svg` | string? | save the svg file
 `--exclude-node_modules` | boolean? | exclude packages from `node_modules`
+`--include-dev-dependencies` | boolean? | include devDependencies packages
+`--include-peer-dependencies` | boolean? | include peerDependencies packages
 `--check` | boolean? | check unnecessary dependencies(not recommended)
 `--debug` | boolean? | show debug info
 `-h,--help` | boolean? | Print this message.

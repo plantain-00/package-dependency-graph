@@ -12,6 +12,8 @@ const globAsync = util.promisify(glob)
 export async function readWorkspaceDependenciesAsync(options?: Partial<{
   targetPath: string
   excludeNodeModules: boolean
+  includeDevDependencies: boolean
+  includePeerDependencies: boolean
 }>): Promise<Workspace[]> {
   const rootPackageJson: PackageJson = JSON.parse((await readFileAsync(path.resolve((options?.targetPath || process.cwd()), 'package.json'))).toString())
   const workspacesArray = await Promise.all(rootPackageJson.workspaces.map((w) => globAsync(w)))
@@ -40,20 +42,30 @@ export async function readWorkspaceDependenciesAsync(options?: Partial<{
   }
 
   return packageJsons.map((p, i) => {
-    let dependencies: string[] | undefined
+    const dependencies: string[] = []
+    const targets: { [name: string]: string }[] = []
     if (p.dependencies) {
-      let workpaceDependencies = Object.keys(p.dependencies)
+      targets.push(p.dependencies)
+    }
+    if (p.devDependencies && options?.includeDevDependencies) {
+      targets.push(p.devDependencies)
+    }
+    if (p.peerDependencies && options?.includePeerDependencies) {
+      targets.push(p.peerDependencies)
+    }
+    for (const target of targets) {
+      let workpaceDependencies = Object.keys(target)
       if (options?.excludeNodeModules) {
         workpaceDependencies = workpaceDependencies.filter((d) => packageNames.has(d))
       }
       if (workpaceDependencies.length > 0) {
-        dependencies = workpaceDependencies
+        dependencies.push(...workpaceDependencies)
       }
     }
     return {
       name: p.name,
       path: flattenedWorkspacesArray[i],
-      dependencies,
+      dependencies: dependencies.length > 0 ? dependencies : undefined,
       version: p.version,
     }
   })
@@ -66,6 +78,8 @@ export async function readWorkspaceDependenciesAsync(options?: Partial<{
 export function readWorkspaceDependencies(options?: Partial<{
   targetPath: string
   excludeNodeModules: boolean
+  includeDevDependencies: boolean
+  includePeerDependencies: boolean
 }>): Workspace[] {
   const rootPackageJson: PackageJson = JSON.parse((fs.readFileSync(path.resolve((options?.targetPath || process.cwd()), 'package.json'))).toString())
   const workspacesArray = rootPackageJson.workspaces.map((w) => glob.sync(w))
@@ -94,14 +108,24 @@ export function readWorkspaceDependencies(options?: Partial<{
   }
 
   return packageJsons.map((p, i) => {
-    let dependencies: string[] | undefined
+    const dependencies: string[] = []
+    const targets: { [name: string]: string }[] = []
     if (p.dependencies) {
-      let workpaceDependencies = Object.keys(p.dependencies)
+      targets.push(p.dependencies)
+    }
+    if (p.devDependencies && options?.includeDevDependencies) {
+      targets.push(p.devDependencies)
+    }
+    if (p.peerDependencies && options?.includePeerDependencies) {
+      targets.push(p.peerDependencies)
+    }
+    for (const target of targets) {
+      let workpaceDependencies = Object.keys(target)
       if (options?.excludeNodeModules) {
         workpaceDependencies = workpaceDependencies.filter((d) => packageNames.has(d))
       }
       if (workpaceDependencies.length > 0) {
-        dependencies = workpaceDependencies
+        dependencies.push(...workpaceDependencies)
       }
     }
     return {
@@ -117,6 +141,8 @@ interface PackageJson {
   name: string
   version: string
   dependencies?: { [name: string]: string }
+  devDependencies?: { [name: string]: string }
+  peerDependencies?: { [name: string]: string }
   workspaces: string[]
 }
 
