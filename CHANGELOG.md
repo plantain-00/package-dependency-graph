@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.13.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.12.0...v1.13.0) (2022-03-05)
+  
+* feat: support group ([f2ea6cf](https://github.com/plantain-00/package-dependency-graph/commit/f2ea6cfbea4200e2c0f7dd22457e8a1cfe6276b9))
+* chore: update dependencies ([00fc1de](https://github.com/plantain-00/package-dependency-graph/commit/00fc1def92a1b7b05222f6617080ed2bfe5dbfd7)) ([cc94179](https://github.com/plantain-00/package-dependency-graph/commit/cc9417983b5da265a781f2cfaa529a72001bd366)) ([f217d6d](https://github.com/plantain-00/package-dependency-graph/commit/f217d6daf92954e11cf2a981a2b708331094c3f9)) ([d430e08](https://github.com/plantain-00/package-dependency-graph/commit/d430e088dba796dc94bc21950f8210aabba36b66))
+
 ## [1.12.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.11.3...v1.12.0) (2021-12-14)
   
 * feat: support --include-dev-dependencies and --include-peer-dependencies ([c78413e](https://github.com/plantain-00/package-dependency-graph/commit/c78413e72d2cfefb3dbe4f579a233ea5eb35ea3e))
