@@ -6,6 +6,7 @@
     "declaration": true
   },
   "files": [
-    "index.ts"
+    "index.ts",
+    "lib.d.ts"
   ]
 }

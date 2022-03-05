@@ -8,8 +8,11 @@
   "author": "york yao <yaoao12306@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "dagre": "0.8.5",
+    "dagre-cluster-fix": "0.9.3",
     "tslib": "1 || 2"
+  },
+  "packageDependencyGraph": {
+    "group": "dagre renderer"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

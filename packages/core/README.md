@@ -3,7 +3,7 @@
 ```ts
 import { collectDependencies, toDotFile } from 'package-dependency-graph-core'
 
-const dependencies = await collectDependencies('.', true, ['packages'])
+const dependencies = await collectDependencies('.', true)
 /*
 { 'package-dependency-graph': [ 'dagre-canvas', 'dagre-svg', 'package-dependency-graph-core' ],
   'package-dependency-graph-core': [],

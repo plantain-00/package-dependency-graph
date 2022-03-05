@@ -1,4 +1,4 @@
-import * as dagre from 'dagre'
+import * as dagre from 'dagre-cluster-fix'
 import { RenderTarget, renderDagre, Point } from 'dagre-abstract-renderer'
 
 /**

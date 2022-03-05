@@ -513,10 +513,10 @@ cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-dagre@0.8.5:
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/dagre/-/dagre-0.8.5.tgz#ba30b0055dac12b6c1fcc247817442777d06afee"
-  integrity sha512-/aTqmnRta7x7MCCpExk7HQL2O4owCT2h8NT//9I1OQ9vt29Pa0BzSAkR5lwFUcQ7491yVi/3CXU9jQ5o0Mn2Sw==
+dagre-cluster-fix@0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/dagre-cluster-fix/-/dagre-cluster-fix-0.9.3.tgz#443afb8367b9507b547b7af6ed0af5999e0127d3"
+  integrity sha512-p+84bAxSglL4hiuNmUNtYdEeFZsOuDUIyCx+X3I0BH+c2H6BSFMnF6eluyakSt8cth7TdgO44h4woo0uzYqfNw==
   dependencies:
     graphlib "^2.1.8"
     lodash "^4.17.15"

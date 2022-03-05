@@ -7,10 +7,19 @@
     'minimist',
     'package-dependency-graph-core'
   ],
-  'package-dependency-graph-core': [ 'dagre', 'package-dependency-collect', 'tslib' ],
-  'dagre-abstract-renderer': [ 'dagre', 'tslib' ],
-  'dagre-canvas': [ 'dagre', 'dagre-abstract-renderer' ],
-  'dagre-svg': [ 'dagre', 'dagre-abstract-renderer' ],
+  'package-dependency-graph-core': [ 'dagre-cluster-fix', 'package-dependency-collect', 'tslib' ],
+  'dagre-abstract-renderer': {
+    dependencies: [ 'dagre-cluster-fix', 'tslib' ],
+    group: 'dagre renderer'
+  },
+  'dagre-canvas': {
+    dependencies: [ 'dagre-cluster-fix', 'dagre-abstract-renderer' ],
+    group: 'dagre renderer'
+  },
+  'dagre-svg': {
+    dependencies: [ 'dagre-cluster-fix', 'dagre-abstract-renderer' ],
+    group: 'dagre renderer'
+  },
   'package-dependency-collect': [ 'glob', 'tslib' ]
 }
 package-dependency-graph success.

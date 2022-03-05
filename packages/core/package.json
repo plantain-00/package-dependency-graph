@@ -8,7 +8,7 @@
   "author": "york yao <yaoao12306@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "dagre": "0.8.5",
+    "dagre-cluster-fix": "0.9.3",
     "package-dependency-collect": "^1.12.0",
     "tslib": "1 || 2"
   },

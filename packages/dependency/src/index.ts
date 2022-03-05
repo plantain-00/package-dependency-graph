@@ -9,13 +9,13 @@ const globAsync = util.promisify(glob)
 /**
  * @public
  */
-export async function readWorkspaceDependenciesAsync(options?: Partial<{
+export async function readWorkspaceDependenciesAsync<T = unknown>(options?: Partial<{
   targetPath: string
   excludeNodeModules: boolean
   includeDevDependencies: boolean
   includePeerDependencies: boolean
-}>): Promise<Workspace[]> {
-  const rootPackageJson: PackageJson = JSON.parse((await readFileAsync(path.resolve((options?.targetPath || process.cwd()), 'package.json'))).toString())
+}>): Promise<Workspace<T & PackageJson>[]> {
+  const rootPackageJson: T & PackageJson = JSON.parse((await readFileAsync(path.resolve((options?.targetPath || process.cwd()), 'package.json'))).toString())
   const workspacesArray = await Promise.all(rootPackageJson.workspaces.map((w) => globAsync(w)))
   const flattenedWorkspaces = new Set<string>()
   workspacesArray.forEach((workspace) => {
@@ -33,10 +33,10 @@ export async function readWorkspaceDependenciesAsync(options?: Partial<{
       }
     }
   }
-  const packageJsons: PackageJson[] = []
+  const packageJsons: (T & PackageJson)[] = []
   const packageNames = new Set<string>()
   for (const workspace of flattenedWorkspacesArray) {
-    const packageJson: PackageJson = JSON.parse((await readFileAsync(path.resolve(workspace, 'package.json'))).toString())
+    const packageJson: T & PackageJson = JSON.parse((await readFileAsync(path.resolve(workspace, 'package.json'))).toString())
     packageJsons.push(packageJson)
     packageNames.add(packageJson.name)
   }
@@ -67,6 +67,7 @@ export async function readWorkspaceDependenciesAsync(options?: Partial<{
       path: flattenedWorkspacesArray[i],
       dependencies: dependencies.length > 0 ? dependencies : undefined,
       version: p.version,
+      packageJson: p,
     }
   })
 }
@@ -75,12 +76,12 @@ export async function readWorkspaceDependenciesAsync(options?: Partial<{
 /**
  * @public
  */
-export function readWorkspaceDependencies(options?: Partial<{
+export function readWorkspaceDependencies<T = unknown>(options?: Partial<{
   targetPath: string
   excludeNodeModules: boolean
   includeDevDependencies: boolean
   includePeerDependencies: boolean
-}>): Workspace[] {
+}>): Workspace<T & PackageJson>[] {
   const rootPackageJson: PackageJson = JSON.parse((fs.readFileSync(path.resolve((options?.targetPath || process.cwd()), 'package.json'))).toString())
   const workspacesArray = rootPackageJson.workspaces.map((w) => glob.sync(w))
   const flattenedWorkspaces = new Set<string>()
@@ -99,10 +100,10 @@ export function readWorkspaceDependencies(options?: Partial<{
       }
     }
   }
-  const packageJsons: PackageJson[] = []
+  const packageJsons: (T & PackageJson)[] = []
   const packageNames = new Set<string>()
   for (const workspace of flattenedWorkspacesArray) {
-    const packageJson: PackageJson = JSON.parse((fs.readFileSync(path.resolve(workspace, 'package.json'))).toString())
+    const packageJson: T & PackageJson = JSON.parse((fs.readFileSync(path.resolve(workspace, 'package.json'))).toString())
     packageJsons.push(packageJson)
     packageNames.add(packageJson.name)
   }
@@ -133,6 +134,7 @@ export function readWorkspaceDependencies(options?: Partial<{
       path: flattenedWorkspacesArray[i],
       dependencies,
       version: p.version,
+      packageJson: p,
     }
   })
 }
@@ -149,11 +151,12 @@ interface PackageJson {
 /**
  * @public
  */
-export interface Workspace {
+export interface Workspace<T = unknown> {
   name: string;
   path: string;
   dependencies?: string[]
   version: string
+  packageJson: T
 }
 
 function statAsync(p: string) {

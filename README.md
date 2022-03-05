@@ -43,3 +43,17 @@ name | type | description
 `-h,--help` | boolean? | Print this message.
 `-v,--version` | boolean? | Print the version
 `--graphviz` | boolean? | save graphviz styled png or svg file
+
+## Groups
+
+In your `package.json`, add:
+
+```json
+  "packageDependencyGraph": {
+    "group": "your group name"
+  }
+```
+
+## API
+
+[./packages/core/README.md](./packages/core/README.md)

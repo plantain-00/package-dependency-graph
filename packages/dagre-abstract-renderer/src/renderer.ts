@@ -1,4 +1,4 @@
-import * as dagre from 'dagre'
+import * as dagre from 'dagre-cluster-fix'
 
 import { RenderTarget } from '.'
 
@@ -86,7 +86,7 @@ export function renderDagre<T>(graph: dagre.graphlib.Graph, target: RenderTarget
       () => [],
       () => [
         target.strokeRect(nodeValue.x - nodeValue.width / 2 + marginX, nodeValue.y - nodeValue.height / 2 + marginY, nodeValue.width, nodeValue.height, nodeValue.color!),
-        target.fillText(node, nodeValue.x + marginX, nodeValue.y + marginY, 'black', fontSize, 'sans-serif')
+        target.fillText(node, nodeValue.x + marginX, nodeValue.y - nodeValue.height / 2 + marginY + 16, 'black', fontSize, 'sans-serif')
       ]
     ))
   }
