@@ -55,7 +55,7 @@ export function toDagre(dependencies: { [name: string]: (string[]) | { dependenc
           edges.push({
             dependency: newMapData.from,
             dependent: newMapData.to,
-            color,
+            color: toGroup ? groups[toGroup].color : color,
           })
         }
       } else {

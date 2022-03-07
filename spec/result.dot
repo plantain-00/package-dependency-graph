@@ -7,7 +7,7 @@ digraph {
     color = "#000000";
   }
   package_dependency_graph -> canvas[color = "#0000ff"]
-  package_dependency_graph -> dagre_canvas[color = "#007f00" lhead=cluster_dagre_renderer]
+  package_dependency_graph -> dagre_canvas[color = "#000000" lhead=cluster_dagre_renderer]
   package_dependency_graph -> graphviz_cli[color = "#007fff"]
   package_dependency_graph -> minimist[color = "#00ff00"]
   package_dependency_graph -> package_dependency_graph_core[color = "#00ff7f"]

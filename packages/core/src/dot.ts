@@ -51,6 +51,7 @@ export function toDotFile(dependencies: { [name: string]: (string[]) | { depende
         }
         if (toGroup) {
           clusters.push(`lhead=cluster_${toName(toGroup)}`)
+          color = groups[toGroup].color
         }
         const newMapData = {
           from: fromGroup || dependency,

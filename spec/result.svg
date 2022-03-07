@@ -76,8 +76,8 @@
 <!-- package_dependency_graph&#45;&gt;dagre_canvas -->
 <g id="edge2" class="edge">
 <title>package_dependency_graph&#45;&gt;dagre_canvas</title>
-<path fill="none" stroke="#007f00" d="M487.16,-235.77C411.68,-233.3 319.2,-227.83 273.73,-215.46"/>
-<polygon fill="#007f00" stroke="#007f00" points="274.58,-212.05 264,-212.44 272.51,-218.74 274.58,-212.05"/>
+<path fill="none" stroke="#000000" d="M487.16,-235.77C411.68,-233.3 319.2,-227.83 273.73,-215.46"/>
+<polygon fill="#000000" stroke="#000000" points="274.58,-212.05 264,-212.44 272.51,-218.74 274.58,-212.05"/>
 </g>
 <!-- canvas -->
 <g id="node5" class="node">
