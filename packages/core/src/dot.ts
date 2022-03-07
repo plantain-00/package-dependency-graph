@@ -88,5 +88,5 @@ ${nodeExpression.join('\n')}
 }
 
 function toName(dependency: string) {
-  return dependency.replace(/-/g, '_').replace(/\//g, '_').replace(/@/g, '_').replace(/ /g, '_')
+  return dependency.replace(/-/g, '_').replace(/\//g, '_').replace(/@/g, '_').replace(/ /g, '_').replace(/\./g, '_')
 }
