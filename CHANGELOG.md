@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.13.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.13.0...v1.13.1) (2022-03-07)
+  
+* fix: escape dot in package name ([4297f33](https://github.com/plantain-00/package-dependency-graph/commit/4297f332348c483840cff2e3004b6ed8b44a3280))
+
 ## [1.13.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.12.0...v1.13.0) (2022-03-05)
   
 * feat: support group ([f2ea6cf](https://github.com/plantain-00/package-dependency-graph/commit/f2ea6cfbea4200e2c0f7dd22457e8a1cfe6276b9))
