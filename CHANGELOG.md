@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.13.2](https://github.com/plantain-00/package-dependency-graph/compare/v1.13.1...v1.13.2) (2022-03-08)
+  
+* feat: improve group edge color ([9529d98](https://github.com/plantain-00/package-dependency-graph/commit/9529d987de788e276e4d68785bf0445a43192fb2))
+
 ## [1.13.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.13.0...v1.13.1) (2022-03-07)
   
 * fix: escape dot in package name ([4297f33](https://github.com/plantain-00/package-dependency-graph/commit/4297f332348c483840cff2e3004b6ed8b44a3280))
