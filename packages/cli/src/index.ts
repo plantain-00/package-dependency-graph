@@ -1,6 +1,7 @@
 import minimist from 'minimist'
 import * as fs from 'fs'
 import * as util from 'util'
+import * as path from 'path'
 import { createCanvas } from 'canvas'
 import { renderGraphFromSource } from 'graphviz-cli'
 
@@ -9,6 +10,7 @@ import { renderDagreToCanvas } from 'dagre-canvas'
 import { renderDagreToSvg } from 'dagre-svg'
 
 import * as packageJson from '../package.json'
+import { Configuration } from './config'
 
 let suppressError: boolean | undefined = false
 
@@ -19,13 +21,16 @@ function showToolVersion() {
 function showHelp() {
   console.log(`Version ${packageJson.version}
 Syntax:   package-dependency-graph [options]
-Examples: package-dependency-graph --graphviz --png foo.png
+Examples: package-dependency-graph --config ./package-dependency-graph.config.js
+          package-dependency-graph --config ./package-dependency-graph.config.ts
+          package-dependency-graph --graphviz --png foo.png
           package-dependency-graph --graphviz --svg foo.svg
           package-dependency-graph --png foo.png
           package-dependency-graph --svg foo.svg
 Options:
  -h, --help                                         Print this message.
  -v, --version                                      Print the version
+ --config                                           Config file
  --root                                             Tell the CLI the root directory of project
  --dot                                              Save the dot file
  --png                                              Save the png file
@@ -46,6 +51,7 @@ async function executeCommandLine() {
     v?: boolean
     version?: boolean
     suppressError?: boolean
+    config?: string
     root?: string
     ['exclude-node_modules']?: boolean
     ['include-dev-dependencies']?: boolean
@@ -71,16 +77,31 @@ async function executeCommandLine() {
     process.exit(0)
   }
 
+  let configData: Configuration & { default?: Configuration } | undefined
+  if (argv.config) {
+    const configFilePath = path.resolve(process.cwd(), argv.config)
+    if (configFilePath.endsWith('.ts')) {
+      require('ts-node/register/transpile-only')
+    }
+  
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    configData = require(configFilePath)
+    if (configData?.default) {
+      configData = configData.default;
+    }
+  }
+
   suppressError = argv.suppressError
 
   const dependencies = await collectDependencies(
-    argv.root || '.',
-    argv['exclude-node_modules'],
+    argv.root || configData?.root || '.',
+    argv['exclude-node_modules'] ?? configData?.excludeNodeModules,
     undefined,
-    argv['include-dev-dependencies'],
-    argv['include-peer-dependencies'],
+    argv['include-dev-dependencies'] ?? configData?.includeDevDependencies,
+    argv['include-peer-dependencies'] ?? configData?.includePeerDependencies,
   )
-  if (argv.debug) {
+  const debug = argv.debug || configData?.debug
+  if (debug) {
     console.info(dependencies)
   }
 
@@ -94,31 +115,36 @@ async function executeCommandLine() {
     }
   }
 
-  const dot = toDotFile(dependencies)
-  if (argv.dot && typeof argv.dot === 'string') {
-    await writeFileAsync(argv.dot, dot)
-  } else if (argv.debug) {
-    console.info(dot)
+  const nestedGroups = configData?.nestedGroups?.(Object.keys(dependencies))
+  const dotFile = toDotFile(dependencies, nestedGroups)
+  const dot = argv.dot || configData?.dot
+  if (dot && typeof dot === 'string') {
+    await writeFileAsync(dot, dotFile)
+  } else if (debug) {
+    console.info(dotFile)
   }
-  if (argv.png && typeof argv.png === 'string') {
-    if (argv.graphviz) {
-      await renderGraphFromSource({ input: dot }, { format: 'png', engine: 'dot', name: argv.png })
+  const graphviz = argv.graphviz || configData?.graphviz
+  const png = argv.png || configData?.png
+  if (png && typeof png === 'string') {
+    if (graphviz) {
+      await renderGraphFromSource({ input: dotFile }, { format: 'png', engine: 'dot', name: png })
     } else {
-      const graph = toDagre(dependencies)
+      const graph = toDagre(dependencies, nestedGroups)
       const canvas = createCanvas(300, 300)
       renderDagreToCanvas(graph, canvas as unknown as HTMLCanvasElement, 12, 10)
-      await writeFileAsync(argv.png, canvas.toBuffer('image/png'))
+      await writeFileAsync(png, canvas.toBuffer('image/png'))
     }
   }
-  if (argv.svg && typeof argv.svg === 'string') {
-    let svg: string
-    if (argv.graphviz) {
-      svg = await renderGraphFromSource({ input: dot }, { format: 'svg', engine: 'dot' })
+  const svg = argv.svg || configData?.svg
+  if (svg && typeof svg === 'string') {
+    let svgString: string
+    if (graphviz) {
+      svgString = await renderGraphFromSource({ input: dotFile }, { format: 'svg', engine: 'dot' })
     } else {
-      const graph = toDagre(dependencies)
-      svg = renderDagreToSvg(graph, 12, 10)
+      const graph = toDagre(dependencies, nestedGroups)
+      svgString = renderDagreToSvg(graph, 12, 10)
     }
-    await writeFileAsync(argv.svg, svg)
+    await writeFileAsync(svg, svgString)
   }
 }
 

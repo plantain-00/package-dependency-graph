@@ -5,6 +5,8 @@
   "repository": "https://github.com/plantain-00/package-dependency-graph.git",
   "author": "york yao <yaoao12306@outlook.com>",
   "license": "MIT",
+  "main": "./dist/config.js",
+  "types": "./dist/config.d.ts",
   "dependencies": {
     "canvas": "2",
     "dagre-canvas": "^1.13.0",

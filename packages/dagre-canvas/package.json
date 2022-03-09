@@ -11,9 +11,6 @@
     "dagre-cluster-fix": "0.9.3",
     "dagre-abstract-renderer": "^1.13.0"
   },
-  "packageDependencyGraph": {
-    "group": "dagre renderer"
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   }

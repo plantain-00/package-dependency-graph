@@ -31,6 +31,7 @@ A CLI tool to generate a dependency graph of packages in a monorepo by graphviz 
 
 name | type | description
 --- | --- | ---
+`--config` | string? | Config file
 `--root` | string? | tell the CLI the root directory of project
 `--dot` | string? | save the dot file
 `--png` | string? | save the png file
@@ -46,7 +47,33 @@ name | type | description
 
 ## Groups
 
-In your `package.json`, add:
+In your config file `--config`:
+
+```js
+export default {
+  nestedGroups: (packages) => [
+    {
+      name: 'a super group name',
+      children: [
+        {
+          name: 'a group name',
+          children: [
+            'package-name-1',
+            'package-name-2',
+            {
+              name: 'a sub group name',
+              children: packages.filter((p) => p.startsWith('a sub group name-')),
+            },
+          ],
+        },
+        'package-name-3',
+      ]
+    },
+  ],
+}
+```
+
+Or in your package `package.json`, add:
 
 ```json
   "packageDependencyGraph": {
