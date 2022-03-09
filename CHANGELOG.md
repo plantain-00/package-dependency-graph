@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.14.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.13.2...v1.14.0) (2022-03-09)
+  
+* feat: API supports nested group ([2f30835](https://github.com/plantain-00/package-dependency-graph/commit/2f30835131ede26583b224eaa7ded9c915e3f07f))
+
 ## [1.13.2](https://github.com/plantain-00/package-dependency-graph/compare/v1.13.1...v1.13.2) (2022-03-08)
   
 * feat: improve group edge color ([9529d98](https://github.com/plantain-00/package-dependency-graph/commit/9529d987de788e276e4d68785bf0445a43192fb2))
