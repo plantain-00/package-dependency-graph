@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.14.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.14.0...v1.14.1) (2022-03-10)
+  
+* feat: support --config ([1ee9f87](https://github.com/plantain-00/package-dependency-graph/commit/1ee9f87a1fbad5c6a5d2d43d06e345551b5abfb4))
+
 ## [1.14.0](https://github.com/plantain-00/package-dependency-graph/compare/v1.13.2...v1.14.0) (2022-03-09)
   
 * feat: API supports nested group ([2f30835](https://github.com/plantain-00/package-dependency-graph/commit/2f30835131ede26583b224eaa7ded9c915e3f07f))
