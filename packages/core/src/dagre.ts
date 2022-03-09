@@ -1,35 +1,24 @@
 import * as dagre from 'dagre-cluster-fix'
 
-import { Colors } from '.'
+import { Colors, getCommonParentGroup, NestedGroup, NestedGroupInput, standardizeInput } from '.'
 
 /**
  * @public
  */
-export function toDagre(dependencies: { [name: string]: (string[]) | { dependencies: string[], group: string } }) {
-  const graph = new dagre.graphlib.Graph({
-    compound: Object.values(dependencies).some((d) => !Array.isArray(d)),
-  })
-  graph.setGraph({})
+export function toDagre(
+  rawDependencies: { [name: string]: (string[]) | { dependencies: string[], group: string } },
+  rawNestedGroups: NestedGroupInput[] = [],
+) {
   const nodes = new Map<string, string>()
   const edges: { dependency: string, dependent: string, color: string }[] = []
 
   const colors = new Colors(2)
 
-  const groups: Record<string, { items: string[], color: string }> = {}
-  const packageGroups: Record<string, string> = {}
-  for (const dependency in dependencies) {
-    const dependents = dependencies[dependency]
-    if (!Array.isArray(dependents)) {
-      if (!groups[dependents.group]) {
-        groups[dependents.group] = {
-          items: [],
-          color: colors.getNext(),
-        }
-      }
-      groups[dependents.group].items.push(dependency)
-      packageGroups[dependency] = dependents.group
-    }
-  }
+  const { dependencies, nestedGroups, flattenedGroups, packageGroups } = standardizeInput(colors, rawDependencies, rawNestedGroups)
+  const graph = new dagre.graphlib.Graph({
+    compound: nestedGroups.length > 0,
+  })
+  graph.setGraph({})
 
   const mapData: { from: string, to: string }[] = []
   for (const dependency in dependencies) {
@@ -37,14 +26,16 @@ export function toDagre(dependencies: { [name: string]: (string[]) | { dependenc
       nodes.set(dependency, colors.getNext())
     }
     const dependents = dependencies[dependency]
-    for (const dependent of Array.isArray(dependents) ? dependents : dependents.dependencies) {
+    for (const dependent of dependents) {
       let color = nodes.get(dependent)
       if (!color) {
         color = colors.getNext()
         nodes.set(dependent, color)
       }
-      const fromGroup = packageGroups[dependency]
-      const toGroup = packageGroups[dependent]
+      const { fromGroup, toGroup } = getCommonParentGroup(
+        packageGroups.find((p) => p.name === dependency),
+        packageGroups.find((p) => p.name === dependent),
+      )
       if (fromGroup !== toGroup) {
         const newMapData = {
           from: fromGroup || dependency,
@@ -55,7 +46,7 @@ export function toDagre(dependencies: { [name: string]: (string[]) | { dependenc
           edges.push({
             dependency: newMapData.from,
             dependent: newMapData.to,
-            color: toGroup ? groups[toGroup].color : color,
+            color: toGroup ? flattenedGroups[toGroup].color : color,
           })
         }
       } else {
@@ -66,16 +57,24 @@ export function toDagre(dependencies: { [name: string]: (string[]) | { dependenc
   for (const [n, color] of nodes) {
     graph.setNode(n, { label: n, color })
   }
-  for (const groupName in groups) {
-    const group = groups[groupName]
-    graph.setNode(groupName, { label: groupName, color: group.color })
-    for (const item of group.items) {
-      graph.setParent(item, groupName)
-    }
+  for (const group of nestedGroups) {
+    nestedGroupToSubgraph(graph, group)
   }
   for (const edge of edges) {
     graph.setEdge(edge.dependency, edge.dependent, { color: edge.color })
   }
 
   return graph
+}
+
+function nestedGroupToSubgraph(graph: dagre.graphlib.Graph, nestedGroup: NestedGroup) {
+  graph.setNode(nestedGroup.name, { label: nestedGroup.name, color: nestedGroup.color })
+  for (const child of nestedGroup.children) {
+    if (typeof child !== 'string') {
+      graph.setParent(child.name, nestedGroup.name)
+      nestedGroupToSubgraph(graph, child)
+    } else {
+      graph.setParent(child, nestedGroup.name)
+    }
+  }
 }

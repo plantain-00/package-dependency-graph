@@ -12,7 +12,22 @@ const dependencies = await collectDependencies('.', true)
   'dagre-svg': [ 'dagre-abstract-renderer' ] }
 */
 
-const dot = toDotFile(dependencies)
+const nestedGroups = [
+  {
+    name: 'a super group name',
+    children: [
+      {
+        name: 'a group name',
+        children: [
+          'package-name-1',
+          'package-name-2',
+        ],
+      },
+      'package-name-3',
+    ]
+  }
+]
+const dot = toDotFile(dependencies, nestedGroups)
 
-const dagre = toDagre(dependencies)
+const dagre = toDagre(dependencies, nestedGroups)
 ```

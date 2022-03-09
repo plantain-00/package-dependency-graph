@@ -3,9 +3,11 @@ digraph {
   graph [compound=true];
   subgraph cluster_dagre_renderer {
     dagre_abstract_renderer dagre_canvas dagre_svg;
+
     label = "dagre renderer";
     color = "#000000";
   }
+
   package_dependency_graph -> canvas[color = "#0000ff"]
   package_dependency_graph -> dagre_canvas[color = "#000000" lhead=cluster_dagre_renderer]
   package_dependency_graph -> graphviz_cli[color = "#007fff"]
