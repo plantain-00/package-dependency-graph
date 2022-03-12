@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.14.2](https://github.com/plantain-00/package-dependency-graph/compare/v1.14.1...v1.14.2) (2022-03-12)
+  
+* fix: export type ([9c8731a](https://github.com/plantain-00/package-dependency-graph/commit/9c8731a477781e9e05e04514a6ef5808456cfba3))
+* chore: update dependencies ([7750703](https://github.com/plantain-00/package-dependency-graph/commit/77507035c7b5cf9f9b2393855b7712ca4e422785))
+
 ## [1.14.1](https://github.com/plantain-00/package-dependency-graph/compare/v1.14.0...v1.14.1) (2022-03-10)
   
 * feat: support --config ([1ee9f87](https://github.com/plantain-00/package-dependency-graph/commit/1ee9f87a1fbad5c6a5d2d43d06e345551b5abfb4))
