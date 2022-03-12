@@ -72,7 +72,6 @@ export async function readWorkspaceDependenciesAsync<T = unknown>(options?: Part
   })
 }
 
-
 /**
  * @public
  */
@@ -139,7 +138,10 @@ export function readWorkspaceDependencies<T = unknown>(options?: Partial<{
   })
 }
 
-interface PackageJson {
+/**
+ * @public
+ */
+export interface PackageJson {
   name: string
   version: string
   dependencies?: { [name: string]: string }
