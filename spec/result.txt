@@ -5,7 +5,8 @@
     'dagre-svg',
     'graphviz-cli',
     'minimist',
-    'package-dependency-graph-core'
+    'package-dependency-graph-core',
+    'ts-node'
   ],
   'package-dependency-graph-core': [ 'dagre-cluster-fix', 'package-dependency-collect', 'tslib' ],
   'dagre-abstract-renderer': [ 'dagre-cluster-fix', 'tslib' ],

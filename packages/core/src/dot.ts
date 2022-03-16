@@ -89,7 +89,7 @@ function nestedGroupToSubgraph(nestedGroup: NestedGroup, depth: number): string 
     }
   }
   return `  ${indent}subgraph cluster_${toName(nestedGroup.name)} {
-    ${indent}${nodes.map((n) => toName(n)).join(' ')};
+    ${indent}${nodes.map((n) => toName(n)).join(' ')}${nodes.length > 0 ? ';' : ''}
 ${children.map((c) => nestedGroupToSubgraph(c, depth + 1)).join('\n')}
     ${indent}label = "${nestedGroup.name}";
     ${indent}color = "${nestedGroup.color}";

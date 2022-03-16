@@ -13,7 +13,8 @@
     "dagre-svg": "^1.14.1",
     "graphviz-cli": "1",
     "minimist": "1",
-    "package-dependency-graph-core": "^1.14.2"
+    "package-dependency-graph-core": "^1.14.2",
+    "ts-node": "*"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
