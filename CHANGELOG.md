@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.14.3](https://github.com/plantain-00/package-dependency-graph/compare/v1.14.2...v1.14.3) (2022-03-17)
+  
+* fix: fix wrong dot file generation, add ts-node as dependency ([de4a268](https://github.com/plantain-00/package-dependency-graph/commit/de4a268e79c0870885808c64c28c271e4236ebb7))
+
 ## [1.14.2](https://github.com/plantain-00/package-dependency-graph/compare/v1.14.1...v1.14.2) (2022-03-12)
   
 * fix: export type ([9c8731a](https://github.com/plantain-00/package-dependency-graph/commit/9c8731a477781e9e05e04514a6ef5808456cfba3))
