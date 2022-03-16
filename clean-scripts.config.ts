@@ -17,7 +17,7 @@ export default {
   ],
   lint: {
     ts: `eslint --ext .js,.ts,.tsx ${tsFiles}`,
-    export: `no-unused-export ${tsFiles} --strict --need-module tslib`,
+    export: `no-unused-export ${tsFiles} --strict --need-module tslib --need-module ts-node`,
     markdown: `markdownlint README.md`,
     typeCoverageCore: 'type-coverage -p packages/core/src --strict --ignore-files "**/*.d.ts"',
     typeCoverageCli: 'type-coverage -p packages/cli/src --strict --ignore-files "**/*.d.ts"',
