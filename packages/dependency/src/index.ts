@@ -16,7 +16,8 @@ export async function readWorkspaceDependenciesAsync<T = unknown>(options?: Part
   includePeerDependencies: boolean
 }>): Promise<Workspace<T & PackageJson>[]> {
   const rootPackageJson: T & PackageJson = JSON.parse((await readFileAsync(path.resolve((options?.targetPath || process.cwd()), 'package.json'))).toString())
-  const workspacesArray = await Promise.all(rootPackageJson.workspaces.map((w) => globAsync(w)))
+  const workspaces = Array.isArray(rootPackageJson.workspaces) ? rootPackageJson.workspaces : rootPackageJson.workspaces.packages;
+  const workspacesArray = await Promise.all(workspaces.map((w) => globAsync(w)))
   const flattenedWorkspaces = new Set<string>()
   workspacesArray.forEach((workspace) => {
     workspace.forEach((w) => {
@@ -82,7 +83,8 @@ export function readWorkspaceDependencies<T = unknown>(options?: Partial<{
   includePeerDependencies: boolean
 }>): Workspace<T & PackageJson>[] {
   const rootPackageJson: PackageJson = JSON.parse((fs.readFileSync(path.resolve((options?.targetPath || process.cwd()), 'package.json'))).toString())
-  const workspacesArray = rootPackageJson.workspaces.map((w) => glob.sync(w))
+  const workspaces = Array.isArray(rootPackageJson.workspaces) ? rootPackageJson.workspaces : rootPackageJson.workspaces.packages;
+  const workspacesArray = workspaces.map((w) => glob.sync(w))
   const flattenedWorkspaces = new Set<string>()
   workspacesArray.forEach((workspace) => {
     workspace.forEach((w) => {
@@ -147,7 +149,7 @@ export interface PackageJson {
   dependencies?: { [name: string]: string }
   devDependencies?: { [name: string]: string }
   peerDependencies?: { [name: string]: string }
-  workspaces: string[]
+  workspaces: string[] | { packages: string[] }
 }
 
 /**
