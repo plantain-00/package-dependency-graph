@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.14.4](https://github.com/plantain-00/package-dependency-graph/compare/v1.14.3...v1.14.4) (2023-04-20)
+  
+* fix: allow long form workspace declartion ([083f4a4](https://github.com/plantain-00/package-dependency-graph/commit/083f4a4fe03a075186b075b926ee29f57d6fccce))
+* chore: update dependencies ([51697f6](https://github.com/plantain-00/package-dependency-graph/commit/51697f65336439a112f4581f3c1c3014dc7bb1a3)) ([dc3872a](https://github.com/plantain-00/package-dependency-graph/commit/dc3872a99aa79bb6b51744c0d0e767744d4ba57a)) ([74dc985](https://github.com/plantain-00/package-dependency-graph/commit/74dc985a379dd49b2b50c9b2531f789b43113727)) ([ac5fff6](https://github.com/plantain-00/package-dependency-graph/commit/ac5fff65aadadadaa2b459c4f129747cc9322545)) ([2b2f33b](https://github.com/plantain-00/package-dependency-graph/commit/2b2f33b960a10654bc7b43a43dc55b95565d50de)) ([6b57927](https://github.com/plantain-00/package-dependency-graph/commit/6b57927ae16166fba9627f3a2c728a8a8c61f213)) ([5d3a7d9](https://github.com/plantain-00/package-dependency-graph/commit/5d3a7d9547c7759e9d9f4d732653f28e325b4523)) ([b9241dc](https://github.com/plantain-00/package-dependency-graph/commit/b9241dcd364f4f5c72a8cc5c4898d888829058d2)) ([628a8a6](https://github.com/plantain-00/package-dependency-graph/commit/628a8a6f6bb5dd7039b63c7d792acd339d9176a8)) ([79f87e6](https://github.com/plantain-00/package-dependency-graph/commit/79f87e6596db6f569ef253c71dd2c1164b8f3b3a)) ([fd3e921](https://github.com/plantain-00/package-dependency-graph/commit/fd3e9213cc626a3ca3c25729814f718e7f38a4da)) ([625e660](https://github.com/plantain-00/package-dependency-graph/commit/625e660851a81ccb9559c529d3f92afea73167e2))
+* fix: lint failure ([d707d64](https://github.com/plantain-00/package-dependency-graph/commit/d707d644b491c8d5479ae637b94324f178db43b8))
+
 ## [1.14.3](https://github.com/plantain-00/package-dependency-graph/compare/v1.14.2...v1.14.3) (2022-03-17)
   
 * fix: fix wrong dot file generation, add ts-node as dependency ([de4a268](https://github.com/plantain-00/package-dependency-graph/commit/de4a268e79c0870885808c64c28c271e4236ebb7))
